@@ -2,6 +2,12 @@
 Guia_Reparticion_Tareas_VetCare.pdf
 Proyecto_Bimestre1_VetCare.pdf
 WhatsApp Image *.jpeg
+Historias de Usuario y Documentacion/
+docs/~$*
+
+# Herramientas de desarrollo local y pruebas TDD (no subir a GitHub)
+test_tdd_integrante1.py
+.vscode/
 
 # Archivos del sistema operativo
 .DS_Store
