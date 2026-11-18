@@ -4,17 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel de Recepción — VetCare | Clínica Veterinaria Huellitas</title>
+  <title>Inicio Recepción — VetCare | Clínica veterinaria Huellitas</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <!-- Encabezado global y barra de navegación del rol Recepcionista (CU-11) -->
+  <!-- Encabezado compartido y navegación del rol Recepcionista (CU-11) -->
   <header class="encabezado-sitio">
-    <section class="marca" aria-label="Identidad de la clínica">
-      <h1>VetCare — Clínica Veterinaria “Huellitas”</h1>
-      <p>Sistema de Gestión de Citas, Pacientes e Historial Clínico (Quito)</p>
-    </section>
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
 
     <nav class="navegacion-principal" aria-label="Menú de recepción">
       <ul>
@@ -22,97 +37,96 @@
         <li><a href="propietarios-listado.html">Propietarios</a></li>
         <li><a href="mascotas-listado.html">Mascotas</a></li>
         <li><a href="citas-listado.html">Citas</a></li>
-        <li><a href="../index.html" class="enlace-salir">Cerrar sesión</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="contenido-principal">
-    <!-- Encabezado contextual de la pantalla (CU-11 Consultar panel de recepción y cerrar sesión) -->
-    <section class="encabezado-pagina">
+    <!-- Banner Hero Océano (CU-11) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-inicio-recepcion">
       <hgroup>
-        <h2>Panel Principal de Recepción</h2>
-        <p>Acceda rápidamente a la gestión de propietarios, mascotas y agendamiento de citas médicas de la clínica.</p>
+        <p class="migas-pan">Inicio</p>
+        <h2 id="titulo-inicio-recepcion">¿A quién atendemos hoy?</h2>
+        <p>Cada visita, un poquito más de bienestar.</p>
       </hgroup>
-      <span class="etiqueta-estado">Rol: Recepcionista · CU-11</span>
     </section>
 
-    <!-- Indicadores operativos de resumen diario -->
-    <section class="grilla-resumen" aria-label="Resumen operativo diario">
-      <article class="tarjeta-indicador">
-        <h3>Capacidad Diaria</h3>
-        <strong>~40</strong>
-        <p class="texto-ayuda">Mascotas atendidas al día en bloques de 30 minutos.</p>
+    <!-- Bloque superior: tarjeta de bienvenida diaria con perro foca + resumen Hoy en Huellitas -->
+    <section class="contenedor-acceso" aria-label="Resumen de jornada y acción principal">
+      <article class="tarjeta-blanca tarjeta-hero-dia">
+        <div class="contenido-hero-dia">
+          <p class="sobretitulo">MARTES, 17 DE NOVIEMBRE</p>
+          <h3>Hoy navegamos juntos</h3>
+          <p>Agenda una visita o encuentra a un paciente sin perder de vista lo importante.</p>
+          <p class="grupo-acciones">
+            <a href="citas-agendar.html" class="boton boton-primario">+ Agendar cita</a>
+            <a href="propietarios-nuevo.html" class="boton boton-secundario">+ Nuevo propietario</a>
+          </p>
+        </div>
+        <img src="../img/perrofoca.jpg" alt="Toby, mascota capitán de Huellitas" class="ilustracion-hero-dia">
       </article>
 
-      <article class="tarjeta-indicador">
-        <h3>Directorio Base</h3>
-        <strong>4</strong>
-        <p class="texto-ayuda">Propietarios verificados con cédula de 10 dígitos y celular 09.</p>
+      <aside class="panel-lateral" aria-labelledby="titulo-resumen-hoy">
+        <h3 id="titulo-resumen-hoy">Hoy en Huellitas</h3>
+        <ul class="lista-indicadores-dia">
+          <li>
+            <strong>01</strong>
+            <span>Cita programada</span>
+          </li>
+          <li>
+            <strong>09:00</strong>
+            <span>Próxima visita &middot; Toby</span>
+          </li>
+          <li>
+            <strong>18:00</strong>
+            <span>Cierre de atención</span>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Sección de accesos rápidos en tarjetas pastel (Propietarios, Mascotas, Citas) -->
+    <section class="encabezado-seccion-inicio" aria-labelledby="titulo-accesos-recepcion">
+      <h2 id="titulo-accesos-recepcion">¿Qué necesitas hacer?</h2>
+      <p class="texto-ayuda">Tus accesos de siempre, a una sola mirada.</p>
+    </section>
+
+    <section class="grilla-modulos" aria-label="Módulos de recepción">
+      <article class="tarjeta-modulo tarjeta-menu-propietarios">
+        <span class="icono-circular" aria-hidden="true">&#128101;</span>
+        <hgroup>
+          <h3>Propietarios</h3>
+          <p>Conecta con su familia humana.</p>
+        </hgroup>
+        <a href="propietarios-listado.html" class="enlace-accion">Explorar &rarr;</a>
       </article>
 
-      <article class="tarjeta-indicador">
-        <h3>Equipo Veterinario</h3>
-        <strong>3</strong>
-        <p class="texto-ayuda">Médicos veterinarios disponibles para atención en consultorio.</p>
+      <article class="tarjeta-modulo tarjeta-menu-mascotas">
+        <span class="icono-circular" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h3>Mascotas</h3>
+          <p>Sus fichas, su historia y mucho cariño.</p>
+        </hgroup>
+        <a href="mascotas-listado.html" class="enlace-accion">Explorar &rarr;</a>
+      </article>
+
+      <article class="tarjeta-modulo tarjeta-menu-citas">
+        <span class="icono-circular" aria-hidden="true">&#128197;</span>
+        <hgroup>
+          <h3>Citas</h3>
+          <p>Encuentra y organiza cada visita.</p>
+        </hgroup>
+        <a href="citas-listado.html" class="enlace-accion">Explorar &rarr;</a>
       </article>
     </section>
 
-    <!-- Tarjetas de acceso directo a los módulos operativos (CU-02, CU-03, CU-04, CU-05) -->
-    <section class="grilla-modulos" aria-label="Módulos operativos de recepción">
-      <article class="tarjeta-modulo">
-        <hgroup>
-          <h3>Propietarios (CU-02)</h3>
-          <p>Administre la ficha de identificación, contacto telefónico y dirección de cada cliente.</p>
-        </hgroup>
-        <p class="grupo-acciones">
-          <a href="propietarios-listado.html" class="boton boton-primario">Ver Propietarios</a>
-          <a href="propietarios-nuevo.html" class="boton boton-borde">Nuevo Propietario</a>
-        </p>
-      </article>
-
-      <article class="tarjeta-modulo">
-        <hgroup>
-          <h3>Mascotas (CU-03)</h3>
-          <p>Registre y consulte los pacientes asociados a un propietario existente.</p>
-        </hgroup>
-        <p class="grupo-acciones">
-          <a href="mascotas-listado.html" class="boton boton-primario">Ver Mascotas</a>
-          <a href="mascotas-nueva.html" class="boton boton-borde">Nueva Mascota</a>
-        </p>
-      </article>
-
-      <article class="tarjeta-modulo">
-        <hgroup>
-          <h3>Citas Médicas (CU-04 / CU-05)</h3>
-          <p>Programe nuevos turnos, reprograme horarios o cancele citas con motivo registrado.</p>
-        </hgroup>
-        <p class="grupo-acciones">
-          <a href="citas-agendar.html" class="boton boton-primario">Agendar Cita</a>
-          <a href="citas-listado.html" class="boton boton-borde">Gestionar Citas</a>
-        </p>
-      </article>
-    </section>
-
-    <!-- Recordatorios operativos y cierre de sesión seguro -->
-    <aside class="panel-lateral" aria-labelledby="titulo-recordatorios">
-      <h3 id="titulo-recordatorios">Lineamientos de Atención y Cierre de Turno</h3>
-      <ul class="lista-informativa">
-        <li><strong>Horario de citas:</strong> Lunes a sábado, de 08:00 a 18:00 en intervalos de 30 minutos.</li>
-        <li><strong>Orden transaccional:</strong> Para agendar una cita (CU-04), verifique que el propietario (CU-02) y
-          la mascota (CU-03) estén registrados.</li>
-        <li><strong>Seguridad de puesto:</strong> Al finalizar su jornada o ausentarse de recepción, cierre su sesión.
-        </li>
-      </ul>
-      <p class="acciones-formulario">
-        <a href="../index.html" class="boton boton-peligro">Cerrar sesión</a>
-      </p>
-    </aside>
+    <p class="consejo-abordo">Consejo de a bordo: busca primero al propietario para evitar fichas duplicadas.</p>
   </main>
 
   <footer class="pie-sitio">
-    <p>&copy; 2026 VetCare — Clínica Veterinaria “Huellitas” (Quito, Ecuador)</p>
-    <p>Proyecto Bimestre 1 · Desarrollo de Aplicaciones Web (HTML5 y CSS3)</p>
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
   </footer>
 </body>
 
