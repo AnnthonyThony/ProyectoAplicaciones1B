@@ -4,17 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Propietarios — VetCare | Clínica Veterinaria Huellitas</title>
+  <title>Propietarios — VetCare | Clínica veterinaria Huellitas</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <!-- Encabezado global y barra de navegación del rol Recepcionista -->
+  <!-- Encabezado compartido y navegación del rol Recepcionista -->
   <header class="encabezado-sitio">
-    <section class="marca" aria-label="Identidad de la clínica">
-      <h1>VetCare — Clínica Veterinaria “Huellitas”</h1>
-      <p>Sistema de Gestión de Citas, Pacientes e Historial Clínico (Quito)</p>
-    </section>
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
 
     <nav class="navegacion-principal" aria-label="Menú de recepción">
       <ul>
@@ -22,138 +37,109 @@
         <li><a href="propietarios-listado.html" aria-current="page">Propietarios</a></li>
         <li><a href="mascotas-listado.html">Mascotas</a></li>
         <li><a href="citas-listado.html">Citas</a></li>
-        <li><a href="../index.html" class="enlace-salir">Cerrar sesión</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="contenido-principal">
-    <!-- Encabezado contextual de la pantalla (CU-02 flujo Consultar y buscar propietario) -->
-    <section class="encabezado-pagina">
+    <!-- Banner Hero Océano con botón primario a la derecha (CU-02) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-propietarios">
       <hgroup>
-        <h2>Directorio de Propietarios</h2>
-        <p>Consulte, busque y gestione los datos de identificación y contacto de los clientes de la clínica.</p>
+        <p class="migas-pan">Inicio &rsaquo; Propietarios</p>
+        <h2 id="titulo-propietarios">Propietarios</h2>
+        <p>Personas que confían en nuestras manos.</p>
       </hgroup>
-      <span class="etiqueta-estado">Rol: Recepcionista · CU-02</span>
+      <a href="propietarios-nuevo.html" class="boton boton-blanco">+ Nuevo propietario</a>
     </section>
 
-    <!-- CU-02 (Flujo básico paso 3): Buscador por cédula, nombre, apellido o celular + botón Nuevo propietario -->
-    <section class="barra-herramientas" aria-label="Búsqueda y registro de propietarios">
-      <form class="formulario-busqueda" action="propietarios-listado.html" method="get">
+    <!-- Franja de contador -->
+    <section class="barra-contador" aria-label="Resumen de propietarios registrados">
+      <p><strong>01</strong> Familia registrada en Huellitas</p>
+      <span>Información segura, siempre a mano.</span>
+    </section>
+
+    <!-- Directorio de propietarios con buscador y tabla amable (CU-02) -->
+    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-propietarios">
+      <h3 id="titulo-tabla-propietarios">Directorio de propietarios</h3>
+
+      <form class="formulario-busqueda barra-busqueda-tabla" action="propietarios-listado.html" method="get">
         <p class="campo-formulario">
-          <label for="buscar-propietario">Buscar propietario</label>
+          <label for="buscar-propietario" class="oculto-visualmente">Buscar propietario</label>
           <input type="search" id="buscar-propietario" name="q" maxlength="50"
-            placeholder="Buscar por cédula, nombre, apellido o celular..."
-            title="Ingrese la cédula, nombre o celular del propietario a buscar">
+            placeholder="Buscar por nombre, cédula o celular"
+            title="Ingrese nombre, cédula o celular del propietario">
+        </p>
+        <p class="campo-formulario campo-filtro">
+          <label for="filtro-propietarios" class="oculto-visualmente">Filtrar propietarios</label>
+          <select id="filtro-propietarios" name="filtro" title="Filtrar listado de propietarios">
+            <option value="todos" selected>Todos los propietarios</option>
+            <option value="con-citas">Con citas recientes</option>
+          </select>
         </p>
         <button type="submit" class="boton boton-secundario">Buscar</button>
-        <a href="propietarios-listado.html" class="boton boton-borde">Ver todos</a>
       </form>
 
-      <a href="propietarios-nuevo.html" class="boton boton-primario">+ Nuevo propietario</a>
-    </section>
-
-    <!-- CU-02 (Flujo básico pasos 2 y 4): Tabla accesible con datos coherentes del Diccionario Oficial -->
-    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-propietarios">
-      <h3 id="titulo-tabla-propietarios">Listado de Propietarios Registrados</h3>
-
       <table class="tabla-datos">
-        <caption>Directorio activo de propietarios y sus mascotas asociadas en VetCare</caption>
+        <caption>Directorio de propietarios registrados en VetCare</caption>
         <thead>
           <tr>
+            <th scope="col">Propietario</th>
             <th scope="col">Cédula</th>
-            <th scope="col">Nombres</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Teléfono Celular</th>
-            <th scope="col">Correo Electrónico</th>
-            <th scope="col">Sector / Dirección (Quito)</th>
-            <th scope="col">Mascota(s)</th>
+            <th scope="col">Contacto</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1712345678</th>
-            <td>Juan Carlos</td>
-            <td>Pérez Morales</td>
-            <td>0987654321</td>
-            <td>juan.perez@correo.ec</td>
-            <td>Iñaquito — Av. Amazonas N36-152 y Naciones Unidas</td>
-            <td><a href="mascotas-listado.html">Toby (Perro)</a></td>
             <td>
-              <span class="grupo-acciones">
-                <a href="propietarios-editar.html" class="boton boton-secundario boton-pequeno">Editar</a>
-                <a href="propietarios-eliminar.html" class="boton boton-peligro boton-pequeno">Eliminar</a>
+              <span class="celda-propietario">
+                <span class="avatar-tabla" aria-hidden="true">&#128100;</span>
+                <span>
+                  <strong>Juan Carlos Pérez Morales</strong>
+                  <span class="subtexto-tabla">Tutor de Toby &middot; Iñaquito</span>
+                </span>
               </span>
             </td>
-          </tr>
-          <tr>
-            <th scope="row">1723456789</th>
-            <td>María Fernanda</td>
-            <td>López Castro</td>
-            <td>0991234567</td>
-            <td>mflopez@correo.ec</td>
-            <td>Cumbayá — Calle Chimborazo E4-21 y Pampite</td>
-            <td><a href="mascotas-listado.html">Luna (Gato)</a></td>
+            <td>1712345678</td>
             <td>
-              <span class="grupo-acciones">
-                <a href="propietarios-editar.html" class="boton boton-secundario boton-pequeno">Editar</a>
-                <a href="propietarios-eliminar.html" class="boton boton-peligro boton-pequeno">Eliminar</a>
-              </span>
+              <span>0987654321</span>
+              <span class="subtexto-tabla">juan.perez@correo.ec</span>
             </td>
-          </tr>
-          <tr>
-            <th scope="row">1709876543</th>
-            <td>Carlos Andrés</td>
-            <td>Andrade Vega</td>
-            <td>0984567890</td>
-            <td>candrade@correo.ec</td>
-            <td>La Mariscal — Av. 6 de Diciembre N24-109 y Foch</td>
-            <td><a href="mascotas-listado.html">Max (Perro)</a></td>
             <td>
               <span class="grupo-acciones">
-                <a href="propietarios-editar.html" class="boton boton-secundario boton-pequeno">Editar</a>
-                <a href="propietarios-eliminar.html" class="boton boton-peligro boton-pequeno">Eliminar</a>
-              </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">1756789012</th>
-            <td>Lucía Gabriela</td>
-            <td>Torres Mena</td>
-            <td>0976543210</td>
-            <td>lucia.torres@correo.ec</td>
-            <td>El Bosque — Av. Occidental N48-30 y Edmundo Carvajal</td>
-            <td><a href="mascotas-listado.html">Kiwi (Ave)</a></td>
-            <td>
-              <span class="grupo-acciones">
-                <a href="propietarios-editar.html" class="boton boton-secundario boton-pequeno">Editar</a>
-                <a href="propietarios-eliminar.html" class="boton boton-peligro boton-pequeno">Eliminar</a>
+                <a href="mascotas-listado.html" class="enlace-accion">&#8599; Ver</a>
+                <a href="propietarios-editar.html" class="enlace-accion">&#9998; Editar</a>
+                <a href="propietarios-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
               </span>
             </td>
           </tr>
         </tbody>
       </table>
+
+      <footer class="pie-tabla">
+        <span>Mostrando 1 de 1 registros</span>
+        <span class="paginacion">
+          <span>Anterior</span>
+          <strong>1</strong>
+          <span>Siguiente</span>
+        </span>
+      </footer>
     </article>
 
-    <!-- Información operativa complementaria (Flujos alternos 4a y 4b) -->
-    <aside class="panel-lateral" aria-labelledby="titulo-ayuda-listado">
-      <h3 id="titulo-ayuda-listado">Operaciones Disponibles desde el Directorio</h3>
-      <ul class="lista-informativa">
-        <li><strong>Sin coincidencias (Flujo alterno 4a):</strong> Si el término ingresado no coincide con ningún registro,
-          el sistema informará <em>“No se encontraron propietarios”</em> permitiendo restablecer la lista con <strong>Ver
-            todos</strong>.</li>
-        <li><strong>Consultar mascotas (Flujo alterno 4b):</strong> Al pulsar sobre el nombre de una mascota (por ejemplo,
-          <strong>Toby</strong>), accederá directamente al listado de mascotas (CU-03).</li>
-        <li><strong>Mantenimiento CRUD:</strong> Utilice <strong>Editar</strong> para actualizar teléfonos o direcciones y
-          <strong>Eliminar</strong> para confirmar una baja.</li>
-      </ul>
+    <!-- Tarjeta inferior informativa -->
+    <aside class="tarjeta-blanca tarjeta-consejo-inferior" aria-labelledby="titulo-una-familia">
+      <span class="icono-circular" aria-hidden="true">&#9825;</span>
+      <div class="contenido-consejo">
+        <h3 id="titulo-una-familia">Una familia, una ficha</h3>
+        <p>Antes de crear un propietario, revisa su cédula. Así mantenemos su información en un solo lugar.</p>
+      </div>
     </aside>
   </main>
 
   <footer class="pie-sitio">
-    <p>&copy; 2026 VetCare — Clínica Veterinaria “Huellitas” (Quito, Ecuador)</p>
-    <p>Proyecto Bimestre 1 · Desarrollo de Aplicaciones Web (HTML5 y CSS3)</p>
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
   </footer>
 </body>
 

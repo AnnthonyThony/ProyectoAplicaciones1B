@@ -4,17 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eliminar Propietario — VetCare | Clínica Veterinaria Huellitas</title>
+  <title>Eliminar Propietario — VetCare | Clínica veterinaria Huellitas</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <!-- Encabezado global y barra de navegación del rol Recepcionista -->
+  <!-- Encabezado compartido y navegación del rol Recepcionista -->
   <header class="encabezado-sitio">
-    <section class="marca" aria-label="Identidad de la clínica">
-      <h1>VetCare — Clínica Veterinaria “Huellitas”</h1>
-      <p>Sistema de Gestión de Citas, Pacientes e Historial Clínico (Quito)</p>
-    </section>
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
 
     <nav class="navegacion-principal" aria-label="Menú de recepción">
       <ul>
@@ -22,96 +37,71 @@
         <li><a href="propietarios-listado.html" aria-current="page">Propietarios</a></li>
         <li><a href="mascotas-listado.html">Mascotas</a></li>
         <li><a href="citas-listado.html">Citas</a></li>
-        <li><a href="../index.html" class="enlace-salir">Cerrar sesión</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="contenido-principal">
-    <!-- Encabezado contextual de la pantalla (CU-02 flujo Eliminar propietario) -->
-    <section class="encabezado-pagina">
+    <!-- Banner Hero Océano -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-eliminar-propietario">
       <hgroup>
-        <h2>Confirmar Eliminación de Propietario</h2>
-        <p>Revise cuidadosamente los datos del propietario antes de confirmar su eliminación definitiva.</p>
+        <p class="migas-pan">Inicio &rsaquo; Propietarios &rsaquo; Eliminar</p>
+        <h2 id="titulo-eliminar-propietario">Eliminar propietario</h2>
+        <p>Revisemos juntos antes de continuar.</p>
       </hgroup>
-      <span class="etiqueta-estado">Rol: Recepcionista · CU-02</span>
     </section>
 
-    <section class="contenedor-acceso" aria-label="Confirmación de eliminación de propietario">
-      <!-- CU-02 (Flujo básico pasos 2-4): Resumen de solo lectura y formulario con confirmación obligatoria -->
-      <article class="tarjeta-formulario" aria-labelledby="titulo-confirmar-baja">
-        <h2 id="titulo-confirmar-baja">Datos del Propietario a Eliminar</h2>
+    <!-- Tarjeta centrada de confirmación segura (CU-02) -->
+    <article class="tarjeta-confirmacion" aria-labelledby="titulo-confirmar-baja">
+      <header class="encabezado-confirmacion">
+        <span class="icono-advertencia" aria-hidden="true">!</span>
+        <hgroup>
+          <h2 id="titulo-confirmar-baja">¿Seguro que quieres eliminar este registro?</h2>
+          <p>Tómate un momento. Queremos evitar una despedida por error.</p>
+        </hgroup>
+      </header>
 
-        <p class="alerta alerta-peligro">
-          <strong>Advertencia operativa (Flujo alterno 2a):</strong> Esta acción eliminará el registro del propietario.
-          Verifique que sus mascotas asociadas no mantengan citas en estado <em>Programada</em> pendientes de atención.
-        </p>
+      <section class="ficha-resumen-eliminacion" aria-label="Datos del propietario seleccionado">
+        <h3>Juan Carlos Pérez Morales</h3>
+        <p class="subtexto-tabla">Propietario &middot; Cédula 1712345678</p>
 
         <dl class="lista-resumen">
-          <dt>Cédula</dt>
-          <dd>1712345678</dd>
-          <dt>Nombres</dt>
-          <dd>Juan Carlos</dd>
-          <dt>Apellidos</dt>
-          <dd>Pérez Morales</dd>
-          <dt>Teléfono celular</dt>
+          <dt>Celular</dt>
           <dd>0987654321</dd>
-          <dt>Correo electrónico</dt>
+          <dt>Correo</dt>
           <dd>juan.perez@correo.ec</dd>
-          <dt>Dirección domiciliaria</dt>
-          <dd>Iñaquito — Av. Amazonas N36-152 y Naciones Unidas</dd>
-          <dt>Mascota asociada</dt>
-          <dd>Toby (Perro · Golden Retriever)</dd>
+          <dt>Mascota vinculada</dt>
+          <dd>Toby &middot; Labrador</dd>
         </dl>
+      </section>
 
-        <form action="propietarios-listado.html" method="get">
-          <fieldset>
-            <legend>Confirmación Explícita de Baja</legend>
+      <p class="alerta-arena">&#9888; Eliminarás este registro de propietario. Revisa sus vínculos con mascotas y citas
+        antes de confirmar.</p>
+      <p class="texto-error">Esta acción no se puede deshacer.</p>
 
-            <p class="campo-formulario">
-              <label for="motivo-baja">Motivo de eliminación (opcional)</label>
-              <select id="motivo-baja" name="motivo_baja" title="Seleccione opcionalmente el motivo de la eliminación">
-                <option value="" selected>-- Seleccione un motivo (opcional) --</option>
-                <option value="solicitud">Solicitud expresa del propietario</option>
-                <option value="duplicado">Registro duplicado en el sistema</option>
-                <option value="traslado">Cambio de domicilio fuera de Quito</option>
-              </select>
-            </p>
+      <form action="propietarios-listado.html" method="get">
+        <fieldset class="fieldset-limpio">
+          <legend class="oculto-visualmente">Confirmación de eliminación</legend>
 
-            <!-- CU-02 (Flujo básico paso 3 y Flujo alterno 3a): Casilla obligatoria -->
-            <p class="campo-casilla">
-              <input type="checkbox" id="confirmar-baja" name="confirmar_baja" value="si" required
-                title="Debe marcar esta casilla para confirmar la eliminación del propietario">
-              <label for="confirmar-baja">Confirmo que deseo eliminar el registro de este propietario *</label>
-            </p>
-          </fieldset>
-
-          <!-- CU-02 (Flujo básico paso 3 y Flujo alterno 3b): Botones Confirmar y Cancelar -->
-          <p class="acciones-formulario">
-            <button type="submit" class="boton boton-peligro">Confirmar</button>
-            <a href="propietarios-listado.html" class="boton boton-secundario">Cancelar</a>
+          <p class="campo-casilla">
+            <input type="checkbox" id="confirmar-baja" name="confirmar_baja" value="si" required
+              title="Debe marcar esta casilla para confirmar la eliminación del propietario">
+            <label for="confirmar-baja">Confirmo la eliminación definitiva de este registro *</label>
           </p>
-        </form>
-      </article>
+        </fieldset>
 
-      <!-- Panel informativo sobre los flujos alternos del borrado seguro -->
-      <aside class="panel-lateral" aria-labelledby="titulo-reglas-baja">
-        <h3 id="titulo-reglas-baja">Controles de Seguridad (CU-02)</h3>
-        <ul class="lista-informativa">
-          <li><strong>Citas programadas (Flujo alterno 2a):</strong> Si el propietario tiene mascotas con citas
-            <em>Programadas</em>, debe gestionarlas antes en <a href="citas-listado.html">Citas</a> (CU-05).</li>
-          <li><strong>Confirmación requerida (Flujo alterno 3a):</strong> Si intenta pulsar <strong>Confirmar</strong> sin
-            marcar la casilla, el navegador bloqueará el envío.</li>
-          <li><strong>Cancelación segura (Flujo alterno 3b):</strong> Al pulsar <strong>Cancelar</strong>, volverá al
-            listado conservando intacto el registro.</li>
-        </ul>
-      </aside>
-    </section>
+        <p class="acciones-formulario">
+          <a href="propietarios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+          <button type="submit" class="boton boton-peligro">&#128465; Confirmar eliminación</button>
+        </p>
+      </form>
+    </article>
   </main>
 
   <footer class="pie-sitio">
-    <p>&copy; 2026 VetCare — Clínica Veterinaria “Huellitas” (Quito, Ecuador)</p>
-    <p>Proyecto Bimestre 1 · Desarrollo de Aplicaciones Web (HTML5 y CSS3)</p>
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
   </footer>
 </body>
 
