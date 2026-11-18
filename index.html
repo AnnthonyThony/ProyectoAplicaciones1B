@@ -38,7 +38,7 @@
     </section>
 
     <section class="contenedor-acceso" aria-label="Formulario de acceso e información operativa">
-      <!-- HU-01 (Card): Autenticación de personal autorizado. Si la validación nativa HTML5 pasa (Escenario 1.1), redirige a menu-recepcion.html; si falla (Escenario 1.2), bloquea envío con :user-invalid -->
+      <!-- CU-01 Iniciar sesión (Flujo básico): Autenticación de personal autorizado. Si la validación nativa HTML5 pasa, redirige a menu-recepcion.html; si falla (Flujo alterno 3a), bloquea envío con :user-invalid -->
       <article class="tarjeta-formulario" aria-labelledby="titulo-login">
         <h2 id="titulo-login">Iniciar Sesión</h2>
 
@@ -46,7 +46,7 @@
           <fieldset>
             <legend>Credenciales de Usuario</legend>
 
-            <!-- HU-01 (Conversation): Correo institucional obligatorio validado nativamente con type="email" -->
+            <!-- CU-01 (Reglas y validaciones): Correo institucional obligatorio validado nativamente con type="email" -->
             <p class="campo-formulario">
               <label for="correo">Correo electrónico institucional *</label>
               <input type="email" id="correo" name="correo" required maxlength="80" placeholder="usuario@huellitas.ec"
@@ -55,7 +55,7 @@
               <span class="texto-ayuda">Ejemplo: recepcion@huellitas.ec</span>
             </p>
 
-            <!-- HU-01 (Conversation): Contraseña obligatoria con mínimo 6 caracteres para evitar accesos vacíos o débiles -->
+            <!-- CU-01 (Reglas y validaciones): Contraseña obligatoria con mínimo 6 caracteres para evitar accesos vacíos o débiles -->
             <p class="campo-formulario">
               <label for="clave">Contraseña *</label>
               <input type="password" id="clave" name="clave" required minlength="6" maxlength="30"
@@ -64,7 +64,7 @@
               <span class="texto-ayuda">Debe contener entre 6 y 30 caracteres.</span>
             </p>
 
-            <!-- HU-01 (Card): Selector obligatorio del rol operativo (Recepcionista, Veterinario o Administrador) -->
+            <!-- CU-01 (Reglas y validaciones): Selector obligatorio del rol operativo (Recepcionista, Veterinario o Administrador) -->
             <p class="campo-formulario">
               <label for="rol">Rol del usuario *</label>
               <select id="rol" name="rol" required title="Seleccione su rol dentro de la clínica">
@@ -89,7 +89,7 @@
         </form>
       </article>
 
-      <!-- HU-01 (Escenario 1.3): Panel informativo de roles y enlaces demostrativos para navegar a los 3 módulos sin servidor ni JS -->
+      <!-- CU-01 (Flujo alterno 3c): Panel informativo de roles y enlaces demostrativos para navegar a los 3 módulos sin servidor ni JS -->
       <aside class="panel-lateral" aria-labelledby="titulo-panel">
         <h3 id="titulo-panel">Información Operativa — “Huellitas”</h3>
         <ul class="lista-informativa">
