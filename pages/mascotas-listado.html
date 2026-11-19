@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Encabezado compartido y navegación del rol Recepcionista -->
+  
   <header class="encabezado-sitio">
     <div class="barra-identidad">
       <div class="marca marca-fila">
@@ -43,7 +43,7 @@
   </header>
 
   <main class="contenido-principal">
-    <!-- Banner Hero Océano con botón primario a la derecha (CU-03) -->
+    
     <section class="encabezado-pagina" aria-labelledby="titulo-mascotas">
       <hgroup>
         <p class="migas-pan"><a href="menu-recepcion.html">Inicio</a> &rsaquo; Mascotas</p>
@@ -53,13 +53,13 @@
       <a href="mascotas-nueva.html" class="boton boton-blanco">+ Nueva mascota</a>
     </section>
 
-    <!-- Franja de contador -->
+    
     <section class="barra-contador" aria-label="Resumen de mascotas registradas">
-      <p><strong>01</strong> Paciente que forma parte de nuestra familia</p>
+      <p><strong>04</strong> Pacientes que forman parte de nuestra familia</p>
       <span>Información segura, siempre a mano.</span>
     </section>
 
-    <!-- Listado de pacientes con buscador y tabla accesible (CU-03) -->
+    
     <article class="contenedor-tabla" aria-labelledby="titulo-tabla-mascotas">
       <h3 id="titulo-tabla-mascotas">Pacientes de Huellitas</h3>
 
@@ -115,7 +115,84 @@
             </td>
             <td>
               <span class="grupo-acciones">
-                <a href="historial-clinico.html" class="enlace-accion">&#8599; Ver</a>
+                <a href="mascotas-editar.html" class="enlace-accion">&#9998; Editar</a>
+                <a href="mascotas-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="celda-propietario">
+                <span class="avatar-tabla" aria-hidden="true">&#128054;</span>
+                <span>
+                  <strong>Rocky</strong>
+                  <span class="subtexto-tabla">Perro &middot; Macho</span>
+                </span>
+              </span>
+            </td>
+            <td>
+              <span>Pedro Andrés Vaca</span>
+              <span class="subtexto-tabla">C.I. 1714567890</span>
+            </td>
+            <td>
+              <span>Pastor Alemán &middot; 24,0 kg</span>
+              <span class="subtexto-tabla">Nac. 10/08/2022</span>
+            </td>
+            <td>
+              <span class="grupo-acciones">
+                <a href="mascotas-editar.html" class="enlace-accion">&#9998; Editar</a>
+                <a href="mascotas-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="celda-propietario">
+                <span class="avatar-tabla" aria-hidden="true">&#128049;</span>
+                <span>
+                  <strong>Luna</strong>
+                  <span class="subtexto-tabla">Gato &middot; Hembra</span>
+                </span>
+              </span>
+            </td>
+            <td>
+              <span>Ana Lucía Torres</span>
+              <span class="subtexto-tabla">C.I. 1713456789</span>
+            </td>
+            <td>
+              <span>Siamés &middot; 4,3 kg</span>
+              <span class="subtexto-tabla">Nac. 22/02/2024</span>
+            </td>
+            <td>
+              <span class="grupo-acciones">
+                <a href="mascotas-editar.html" class="enlace-accion">&#9998; Editar</a>
+                <a href="mascotas-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="celda-propietario">
+                <span class="avatar-tabla" aria-hidden="true">&#128049;</span>
+                <span>
+                  <strong>Michi</strong>
+                  <span class="subtexto-tabla">Gato &middot; Hembra</span>
+                </span>
+              </span>
+            </td>
+            <td>
+              <span>María Fernanda Salazar</span>
+              <span class="subtexto-tabla">C.I. 1718765432</span>
+            </td>
+            <td>
+              <span>Persa &middot; 3,8 kg</span>
+              <span class="subtexto-tabla">Nac. 05/11/2023</span>
+            </td>
+            <td>
+              <span class="grupo-acciones">
                 <a href="mascotas-editar.html" class="enlace-accion">&#9998; Editar</a>
                 <a href="mascotas-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
               </span>
@@ -125,7 +202,7 @@
       </table>
 
       <footer class="pie-tabla">
-        <span>Mostrando 1 de 1 registros</span>
+        <span>Mostrando 4 de 4 registros</span>
         <span class="paginacion">
           <span>Anterior</span>
           <strong>1</strong>
@@ -134,12 +211,12 @@
       </footer>
     </article>
 
-    <!-- Tarjeta inferior informativa -->
+    
     <aside class="tarjeta-blanca tarjeta-consejo-inferior" aria-labelledby="titulo-historia-huellita">
       <span class="icono-circular" aria-hidden="true">&#128062;</span>
       <div class="contenido-consejo">
         <h3 id="titulo-historia-huellita">Cada huellita tiene su historia</h3>
-        <p>Abre su ficha para consultar los datos del paciente, su historial médico y encontrar a su propietario.</p>
+        <p>Actualiza los datos o el peso del paciente en cada visita para mantener su ficha al día.</p>
       </div>
     </aside>
   </main>
