@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Administrador &middot; Huellitas</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de administración">
+      <ul>
+        <li><a href="veterinarios-listado.html">Veterinarios</a></li>
+        <li><a href="servicios-listado.html" aria-current="page">Servicios</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-servs">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Servicios</p>
+        <h2 id="titulo-servs">Servicios</h2>
+        <p>Catálogo de atención de Huellitas.</p>
+      </hgroup>
+      <a href="servicios-form.html" class="boton boton-blanco">+ Nuevo servicio</a>
+    </section>
+
+    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-servs">
+      <h3 id="titulo-tabla-servs">Catálogo de servicios</h3>
+
+      <form class="formulario-busqueda barra-busqueda-tabla" action="servicios-listado.html" method="get">
+        <p class="campo-formulario">
+          <label for="buscar-servicio" class="oculto-visualmente">Buscar servicio</label>
+          <input type="search" id="buscar-servicio" name="q" maxlength="50" placeholder="Buscar por nombre del servicio" title="Buscar servicio">
+        </p>
+        <button type="submit" class="boton boton-secundario">Buscar</button>
+      </form>
+
+      <table class="tabla-datos">
+        <caption>Catálogo de servicios y precios</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio (USD)</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Consulta general</td>
+            <td>Revisión clínica general de la mascota.</td>
+            <td>$ 15,00</td>
+            <td><span class="grupo-acciones"><a href="servicios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#servicio" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+          <tr>
+            <td>Vacunación</td>
+            <td>Aplicación de vacunas según el esquema de la mascota.</td>
+            <td>$ 12,00</td>
+            <td><span class="grupo-acciones"><a href="servicios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#servicio" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+          <tr>
+            <td>Desparasitación</td>
+            <td>Tratamiento antiparasitario interno y externo.</td>
+            <td>$ 8,00</td>
+            <td><span class="grupo-acciones"><a href="servicios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#servicio" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+          <tr>
+            <td>Cirugía menor</td>
+            <td>Procedimientos quirúrgicos de baja complejidad.</td>
+            <td>$ 80,00</td>
+            <td><span class="grupo-acciones"><a href="servicios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#servicio" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="pie-tabla">
+        <span>Mostrando 4 registros</span>
+        <span class="paginacion">
+          <span>Anterior</span>
+          <strong>1</strong>
+          <span>Siguiente</span>
+        </span>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
