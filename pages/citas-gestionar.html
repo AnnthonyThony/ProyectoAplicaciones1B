@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionar cita — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html" aria-current="page">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-gestionar">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Citas &rsaquo; Gestionar</p>
+        <h2 id="titulo-gestionar">Gestionar cita</h2>
+        <p>Reprograma o cancela con tranquilidad.</p>
+      </hgroup>
+    </section>
+
+    <section class="contenedor-acceso" aria-label="Gestión de la cita seleccionada">
+      <article class="tarjeta-formulario" aria-labelledby="titulo-reprogramar">
+        <h2 id="titulo-reprogramar">Reprogramar cita</h2>
+        <form action="citas-listado.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend>&#128197; Paciente (no se modifica)</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="rep-mascota">Mascota</label>
+                <input type="text" id="rep-mascota" name="mascota" value="Toby (Perro)" readonly>
+              </p>
+              <p class="campo-formulario">
+                <label for="rep-propietario">Propietario</label>
+                <input type="text" id="rep-propietario" name="propietario" value="Juan Carlos Pérez Morales" readonly>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio">
+            <legend>&#128337; Nueva fecha, hora y veterinario</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="rep-fecha">Fecha *</label>
+                <input type="date" id="rep-fecha" name="fecha" value="2026-11-18" required min="2026-11-18" title="Atención de lunes a sábado. No se agendan fechas pasadas.">
+                <span class="texto-ayuda">Atención de lunes a sábado. No se agendan fechas pasadas.</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="rep-hora">Hora *</label>
+                <input type="time" id="rep-hora" name="hora" value="16:30" required min="08:00" max="17:30" step="1800" title="Entre 08:00 y 17:30, en bloques de 30 minutos">
+                <span class="texto-ayuda">Entre 08:00 y 17:30, en bloques de 30 minutos.</span>
+              </p>
+              <p class="campo-formulario campo-completo">
+                <label for="rep-veterinario">Veterinario *</label>
+                <select id="rep-veterinario" name="veterinario" required>
+                  <option value="">Seleccione un veterinario</option>
+                  <option value="gomez" selected>Dra. Ana Gómez</option>
+                  <option value="andrade">Dr. Luis Andrade</option>
+                  <option value="paredes">Dra. Sofía Paredes</option>
+                </select>
+              </p>
+            </div>
+          </fieldset>
+
+          <footer class="pie-formulario">
+            <span class="nota-obligatorios">* Campos obligatorios</span>
+            <p class="acciones-formulario">
+              <a href="citas-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+              <button type="submit" class="boton boton-primario">Guardar cambios</button>
+            </p>
+          </footer>
+        </form>
+
+        <h2 id="titulo-cancelar">Cancelar cita</h2>
+        <form action="citas-listado.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend>&#10060; Cancelar la cita</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario campo-completo">
+                <label for="motivo">Motivo de la cancelación *</label>
+                <textarea id="motivo" name="motivo" rows="3" required maxlength="200" placeholder="Explique por qué se cancela la cita" title="Motivo obligatorio, máximo 200 caracteres"></textarea>
+                <span class="texto-ayuda">Obligatorio. Máximo 200 caracteres.</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <p class="campo-casilla">
+            <input type="checkbox" id="confirmar-cancelacion" name="confirmar" value="si" required title="Marque la casilla para confirmar la cancelación">
+            <label for="confirmar-cancelacion">Confirmo que deseo cancelar esta cita *</label>
+          </p>
+          <p class="acciones-formulario">
+            <button type="submit" class="boton boton-peligro">&#128465; Confirmar cancelación</button>
+          </p>
+        </form>
+      </article>
+
+      <aside class="columna-lateral" aria-labelledby="titulo-resumen-cita">
+        <section class="panel-lateral">
+          <h3 id="titulo-resumen-cita">Resumen de la cita</h3>
+          <dl class="lista-resumen">
+            <dt>Mascota</dt>
+            <dd>Toby (Perro, Labrador)</dd>
+            <dt>Propietario</dt>
+            <dd>Juan Carlos Pérez Morales</dd>
+            <dt>Servicio</dt>
+            <dd>Consulta general</dd>
+            <dt>Veterinario</dt>
+            <dd>Dra. Ana Gómez</dd>
+            <dt>Fecha y hora</dt>
+            <dd>18/11/2026 &middot; 16:30</dd>
+            <dt>Estado</dt>
+            <dd><span class="etiqueta-estado estado-programada">Programada</span></dd>
+          </dl>
+        </section>
+        <p class="alerta-arena">Atención de lunes a sábado, de 08:00 a 17:30 (bloques de 30 minutos).</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
