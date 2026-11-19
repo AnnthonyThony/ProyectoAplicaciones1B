@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinario — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Administrador &middot; Huellitas</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de administración">
+      <ul>
+        <li><a href="veterinarios-listado.html" aria-current="page">Veterinarios</a></li>
+        <li><a href="servicios-listado.html">Servicios</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-vet-form">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Veterinarios &rsaquo; Formulario</p>
+        <h2 id="titulo-vet-form">Datos del veterinario</h2>
+        <p>Registra o actualiza a un integrante del equipo.</p>
+      </hgroup>
+    </section>
+
+    <section class="contenedor-acceso" aria-label="Formulario de veterinario">
+      <article class="tarjeta-formulario" aria-labelledby="titulo-form-vet">
+        <h2 id="titulo-form-vet" class="oculto-visualmente">Formulario de veterinario</h2>
+        <form action="veterinarios-listado.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend>&#128100; Datos personales</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario campo-completo">
+                <label for="vet-cedula">Cédula *</label>
+                <input type="text" id="vet-cedula" name="cedula" required inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" placeholder="10 dígitos" autocomplete="off" title="Exactamente 10 dígitos numéricos">
+                <span class="texto-ayuda">Ej: 1710123456</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="vet-nombres">Nombres *</label>
+                <input type="text" id="vet-nombres" name="nombres" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" minlength="2" maxlength="50" placeholder="Escribe sus nombres" autocomplete="given-name" title="Solo letras y espacios, entre 2 y 50 caracteres">
+                <span class="texto-ayuda">Ej: Ana</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="vet-apellidos">Apellidos *</label>
+                <input type="text" id="vet-apellidos" name="apellidos" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" minlength="2" maxlength="50" placeholder="Escribe sus apellidos" autocomplete="family-name" title="Solo letras y espacios, entre 2 y 50 caracteres">
+                <span class="texto-ayuda">Ej: Gómez</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio">
+            <legend>&#9993; Contacto</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="vet-celular">Celular *</label>
+                <input type="tel" id="vet-celular" name="celular" required pattern="09[0-9]{8}" minlength="10" maxlength="10" inputmode="tel" placeholder="Ingresa el celular" autocomplete="tel" title="10 dígitos que empiezan con 09">
+                <span class="texto-ayuda">Ej: 0987654321</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="vet-correo">Correo electrónico *</label>
+                <input type="email" id="vet-correo" name="correo" required maxlength="80" placeholder="nombre@huellitas.ec" autocomplete="email" title="Ingrese un correo electrónico válido">
+                <span class="texto-ayuda">Ej: ana.gomez@huellitas.ec</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio">
+            <legend>&#127891; Información profesional</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="vet-especialidad">Especialidad *</label>
+                <select id="vet-especialidad" name="especialidad" required>
+                  <option value="">Seleccione una especialidad</option>
+                  <option value="medicina-general">Medicina general</option>
+                  <option value="cirugia">Cirugía</option>
+                  <option value="animales-exóticos">Animales exóticos</option>
+                  <option value="dermatologia">Dermatología</option>
+                </select>
+              </p>
+              <fieldset class="fieldset-limpio campo-formulario">
+                <legend>Estado *</legend>
+                <p class="campo-casilla">
+                  <input type="radio" id="vet-activo" name="estado" value="activo" required>
+                  <label for="vet-activo">Activo</label>
+                  <input type="radio" id="vet-inactivo" name="estado" value="inactivo">
+                  <label for="vet-inactivo">Inactivo</label>
+                </p>
+              </fieldset>
+              <p class="campo-formulario campo-completo">
+                <label for="vet-password">Contraseña inicial *</label>
+                <input type="password" id="vet-password" name="password" required minlength="8" autocomplete="new-password" title="Mínimo 8 caracteres">
+                <span class="texto-ayuda">Mínimo 8 caracteres (solo al crear).</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <footer class="pie-formulario">
+            <span class="nota-obligatorios">* Campos obligatorios</span>
+            <p class="acciones-formulario">
+              <a href="veterinarios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+              <button type="reset" class="boton boton-secundario">Limpiar</button>
+              <button type="submit" class="boton boton-primario">+ Guardar veterinario</button>
+            </p>
+          </footer>
+        </form>
+      </article>
+
+      <aside class="columna-lateral" aria-labelledby="titulo-ayuda-vet">
+        <section class="panel-lateral">
+          <h3 id="titulo-ayuda-vet">Antes de guardar</h3>
+          <p>La cédula debe tener 10 dígitos y el celular debe empezar con 09. Los datos aparecen luego en la agenda y en las citas.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
