@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio Recepción — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Encabezado compartido y navegación del rol Recepcionista (CU-11) -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html" aria-current="page">Inicio</a></li>
+        <li><a href="propietarios-listado.html">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano (CU-11) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-inicio-recepcion">
+      <hgroup>
+        <p class="migas-pan">Inicio</p>
+        <h2 id="titulo-inicio-recepcion">¿A quién atendemos hoy?</h2>
+        <p>Cada visita, un poquito más de bienestar.</p>
+      </hgroup>
+    </section>
+
+    <!-- Bloque superior: tarjeta de bienvenida diaria con perro foca + resumen Hoy en Huellitas -->
+    <section class="contenedor-acceso" aria-label="Resumen de jornada y acción principal">
+      <article class="tarjeta-blanca tarjeta-hero-dia">
+        <div class="contenido-hero-dia">
+          <p class="sobretitulo">MARTES, 17 DE NOVIEMBRE</p>
+          <h3>Hoy navegamos juntos</h3>
+          <p>Agenda una visita o encuentra a un paciente sin perder de vista lo importante.</p>
+          <p class="grupo-acciones">
+            <a href="citas-agendar.html" class="boton boton-primario">+ Agendar cita</a>
+            <a href="propietarios-nuevo.html" class="boton boton-secundario">+ Nuevo propietario</a>
+          </p>
+        </div>
+        <img src="../img/perrofoca.jpg" alt="Toby, mascota capitán de Huellitas" class="ilustracion-hero-dia">
+      </article>
+
+      <aside class="panel-lateral" aria-labelledby="titulo-resumen-hoy">
+        <h3 id="titulo-resumen-hoy">Hoy en Huellitas</h3>
+        <ul class="lista-indicadores-dia">
+          <li>
+            <strong>01</strong>
+            <span>Cita programada</span>
+          </li>
+          <li>
+            <strong>09:00</strong>
+            <span>Próxima visita &middot; Toby</span>
+          </li>
+          <li>
+            <strong>18:00</strong>
+            <span>Cierre de atención</span>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Sección de accesos rápidos en tarjetas pastel (Propietarios, Mascotas, Citas) -->
+    <section class="encabezado-seccion-inicio" aria-labelledby="titulo-accesos-recepcion">
+      <h2 id="titulo-accesos-recepcion">¿Qué necesitas hacer?</h2>
+      <p class="texto-ayuda">Tus accesos de siempre, a una sola mirada.</p>
+    </section>
+
+    <section class="grilla-modulos" aria-label="Módulos de recepción">
+      <article class="tarjeta-modulo tarjeta-menu-propietarios">
+        <span class="icono-circular" aria-hidden="true">&#128101;</span>
+        <hgroup>
+          <h3>Propietarios</h3>
+          <p>Conecta con su familia humana.</p>
+        </hgroup>
+        <a href="propietarios-listado.html" class="enlace-accion">Explorar &rarr;</a>
+      </article>
+
+      <article class="tarjeta-modulo tarjeta-menu-mascotas">
+        <span class="icono-circular" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h3>Mascotas</h3>
+          <p>Sus fichas, su historia y mucho cariño.</p>
+        </hgroup>
+        <a href="mascotas-listado.html" class="enlace-accion">Explorar &rarr;</a>
+      </article>
+
+      <article class="tarjeta-modulo tarjeta-menu-citas">
+        <span class="icono-circular" aria-hidden="true">&#128197;</span>
+        <hgroup>
+          <h3>Citas</h3>
+          <p>Encuentra y organiza cada visita.</p>
+        </hgroup>
+        <a href="citas-listado.html" class="enlace-accion">Explorar &rarr;</a>
+      </article>
+    </section>
+
+    <p class="consejo-abordo">Consejo de a bordo: busca primero al propietario para evitar fichas duplicadas.</p>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

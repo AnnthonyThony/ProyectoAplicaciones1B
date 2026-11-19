@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar Propietario — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Encabezado compartido y navegación del rol Recepcionista -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html" aria-current="page">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-eliminar-propietario">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Propietarios &rsaquo; Eliminar</p>
+        <h2 id="titulo-eliminar-propietario">Eliminar propietario</h2>
+        <p>Revisemos juntos antes de continuar.</p>
+      </hgroup>
+    </section>
+
+    <!-- Tarjeta centrada de confirmación segura (CU-02) -->
+    <article class="tarjeta-confirmacion" aria-labelledby="titulo-confirmar-baja">
+      <header class="encabezado-confirmacion">
+        <span class="icono-advertencia" aria-hidden="true">!</span>
+        <hgroup>
+          <h2 id="titulo-confirmar-baja">¿Seguro que quieres eliminar este registro?</h2>
+          <p>Tómate un momento. Queremos evitar una despedida por error.</p>
+        </hgroup>
+      </header>
+
+      <section class="ficha-resumen-eliminacion" aria-label="Datos del propietario seleccionado">
+        <h3>Juan Carlos Pérez Morales</h3>
+        <p class="subtexto-tabla">Propietario &middot; Cédula 1712345678</p>
+
+        <dl class="lista-resumen">
+          <dt>Celular</dt>
+          <dd>0987654321</dd>
+          <dt>Correo</dt>
+          <dd>juan.perez@correo.ec</dd>
+          <dt>Mascota vinculada</dt>
+          <dd>Toby &middot; Labrador</dd>
+        </dl>
+      </section>
+
+      <p class="alerta-arena">&#9888; Eliminarás este registro de propietario. Revisa sus vínculos con mascotas y citas
+        antes de confirmar.</p>
+      <p class="texto-error">Esta acción no se puede deshacer.</p>
+
+      <form action="propietarios-listado.html" method="get">
+        <fieldset class="fieldset-limpio">
+          <legend class="oculto-visualmente">Confirmación de eliminación</legend>
+
+          <p class="campo-casilla">
+            <input type="checkbox" id="confirmar-baja" name="confirmar_baja" value="si" required
+              title="Debe marcar esta casilla para confirmar la eliminación del propietario">
+            <label for="confirmar-baja">Confirmo la eliminación definitiva de este registro *</label>
+          </p>
+        </fieldset>
+
+        <p class="acciones-formulario">
+          <a href="propietarios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+          <button type="submit" class="boton boton-peligro">&#128465; Confirmar eliminación</button>
+        </p>
+      </form>
+    </article>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

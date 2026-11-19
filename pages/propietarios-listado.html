@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propietarios — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Encabezado compartido y navegación del rol Recepcionista -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html" aria-current="page">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano con botón primario a la derecha (CU-02) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-propietarios">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Propietarios</p>
+        <h2 id="titulo-propietarios">Propietarios</h2>
+        <p>Personas que confían en nuestras manos.</p>
+      </hgroup>
+      <a href="propietarios-nuevo.html" class="boton boton-blanco">+ Nuevo propietario</a>
+    </section>
+
+    <!-- Franja de contador -->
+    <section class="barra-contador" aria-label="Resumen de propietarios registrados">
+      <p><strong>01</strong> Familia registrada en Huellitas</p>
+      <span>Información segura, siempre a mano.</span>
+    </section>
+
+    <!-- Directorio de propietarios con buscador y tabla amable (CU-02) -->
+    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-propietarios">
+      <h3 id="titulo-tabla-propietarios">Directorio de propietarios</h3>
+
+      <form class="formulario-busqueda barra-busqueda-tabla" action="propietarios-listado.html" method="get">
+        <p class="campo-formulario">
+          <label for="buscar-propietario" class="oculto-visualmente">Buscar propietario</label>
+          <input type="search" id="buscar-propietario" name="q" maxlength="50"
+            placeholder="Buscar por nombre, cédula o celular"
+            title="Ingrese nombre, cédula o celular del propietario">
+        </p>
+        <p class="campo-formulario campo-filtro">
+          <label for="filtro-propietarios" class="oculto-visualmente">Filtrar propietarios</label>
+          <select id="filtro-propietarios" name="filtro" title="Filtrar listado de propietarios">
+            <option value="todos" selected>Todos los propietarios</option>
+            <option value="con-citas">Con citas recientes</option>
+          </select>
+        </p>
+        <button type="submit" class="boton boton-secundario">Buscar</button>
+      </form>
+
+      <table class="tabla-datos">
+        <caption>Directorio de propietarios registrados en VetCare</caption>
+        <thead>
+          <tr>
+            <th scope="col">Propietario</th>
+            <th scope="col">Cédula</th>
+            <th scope="col">Contacto</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="celda-propietario">
+                <span class="avatar-tabla" aria-hidden="true">&#128100;</span>
+                <span>
+                  <strong>Juan Carlos Pérez Morales</strong>
+                  <span class="subtexto-tabla">Tutor de Toby &middot; Iñaquito</span>
+                </span>
+              </span>
+            </td>
+            <td>1712345678</td>
+            <td>
+              <span>0987654321</span>
+              <span class="subtexto-tabla">juan.perez@correo.ec</span>
+            </td>
+            <td>
+              <span class="grupo-acciones">
+                <a href="mascotas-listado.html" class="enlace-accion">&#8599; Ver</a>
+                <a href="propietarios-editar.html" class="enlace-accion">&#9998; Editar</a>
+                <a href="propietarios-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="pie-tabla">
+        <span>Mostrando 1 de 1 registros</span>
+        <span class="paginacion">
+          <span>Anterior</span>
+          <strong>1</strong>
+          <span>Siguiente</span>
+        </span>
+      </footer>
+    </article>
+
+    <!-- Tarjeta inferior informativa -->
+    <aside class="tarjeta-blanca tarjeta-consejo-inferior" aria-labelledby="titulo-una-familia">
+      <span class="icono-circular" aria-hidden="true">&#9825;</span>
+      <div class="contenido-consejo">
+        <h3 id="titulo-una-familia">Una familia, una ficha</h3>
+        <p>Antes de crear un propietario, revisa su cédula. Así mantenemos su información en un solo lugar.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

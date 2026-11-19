@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Propietario — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Encabezado compartido y navegación del rol Recepcionista -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html" aria-current="page">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-nuevo-propietario">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Propietarios &rsaquo; Nuevo</p>
+        <h2 id="titulo-nuevo-propietario">Nuevo propietario</h2>
+        <p>Empecemos por conocer a su familia.</p>
+      </hgroup>
+    </section>
+
+    <section class="contenedor-acceso" aria-label="Formulario de registro de propietario">
+      <!-- Tarjeta izquierda: formulario guiado de registro (CU-02) -->
+      <article class="tarjeta-formulario" aria-labelledby="titulo-form-propietario">
+        <h2 id="titulo-form-propietario" class="oculto-visualmente">Formulario de propietario</h2>
+        <form action="propietarios-listado.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend>&#128100; Datos personales</legend>
+
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="nombres">Nombres *</label>
+                <input type="text" id="nombres" name="nombres" required minlength="2" maxlength="50"
+                  pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" autocomplete="given-name" placeholder="Escribe sus nombres"
+                  title="Ingrese solo letras y espacios (entre 2 y 50 caracteres)">
+                <span class="texto-ayuda">Ej: Juan Carlos</span>
+              </p>
+
+              <p class="campo-formulario">
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" name="apellidos" required minlength="2" maxlength="50"
+                  pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" autocomplete="family-name" placeholder="Escribe sus apellidos"
+                  title="Ingrese solo letras y espacios (entre 2 y 50 caracteres)">
+                <span class="texto-ayuda">Ej: Pérez Morales</span>
+              </p>
+
+              <p class="campo-formulario campo-completo">
+                <label for="cedula">Cédula *</label>
+                <input type="text" id="cedula" name="cedula" required minlength="10" maxlength="10" pattern="[0-9]{10}"
+                  inputmode="numeric" placeholder="10 dígitos"
+                  title="Ingrese exactamente 10 dígitos numéricos correspondientes a la cédula">
+                <span class="texto-ayuda">Ej: 1712345678</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio">
+            <legend>&#9993; Datos de contacto</legend>
+
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="telefono">Celular *</label>
+                <input type="tel" id="telefono" name="telefono" required minlength="10" maxlength="10"
+                  pattern="09[0-9]{8}" inputmode="tel" autocomplete="tel" placeholder="Ingresa el celular"
+                  title="El celular debe tener 10 dígitos numéricos y empezar con 09">
+                <span class="texto-ayuda">Ej: 0987654321</span>
+              </p>
+
+              <p class="campo-formulario">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="correo" required maxlength="80" autocomplete="email"
+                  placeholder="nombre@correo.com"
+                  title="Ingrese un correo electrónico válido (ejemplo@dominio.com)">
+                <span class="texto-ayuda">Ej: juan.perez@correo.ec</span>
+              </p>
+
+              <p class="campo-formulario campo-completo">
+                <label for="sector">Sector en Quito *</label>
+                <input type="text" id="sector" name="sector" list="lista-sectores" required minlength="3" maxlength="50"
+                  placeholder="Elige o escribe el sector"
+                  title="Seleccione o ingrese el sector de residencia en Quito">
+                <datalist id="lista-sectores">
+                  <option value="Iñaquito"></option>
+                  <option value="Cumbayá"></option>
+                  <option value="La Mariscal"></option>
+                  <option value="El Bosque"></option>
+                  <option value="Kennedy"></option>
+                  <option value="Centro Histórico"></option>
+                  <option value="Calderón"></option>
+                  <option value="Valle de los Chillos"></option>
+                </datalist>
+                <span class="texto-ayuda">Ej: Iñaquito</span>
+              </p>
+
+              <p class="campo-formulario campo-completo">
+                <label for="direccion">Dirección domiciliaria *</label>
+                <textarea id="direccion" name="direccion" required minlength="5" maxlength="150" rows="3"
+                  placeholder="Calle principal, numeración y referencia"
+                  title="Ingrese la dirección domiciliaria (entre 5 y 150 caracteres)"></textarea>
+                <span class="texto-ayuda">Detalle entre 5 y 150 caracteres para ubicar su domicilio.</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <p class="alerta-arena">Una ficha por persona. Verifica la cédula antes de guardar.</p>
+
+          <footer class="pie-formulario">
+            <span class="nota-obligatorios">* Campos obligatorios</span>
+            <p class="acciones-formulario">
+              <a href="propietarios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+              <button type="reset" class="boton boton-secundario">Limpiar</button>
+              <button type="submit" class="boton boton-primario">+ Guardar propietario</button>
+            </p>
+          </footer>
+        </form>
+      </article>
+
+      <!-- Columna derecha: tarjeta celeste de acompañamiento con perro foca + aviso arena -->
+      <aside class="columna-lateral" aria-labelledby="titulo-acompanamiento">
+        <section class="panel-lateral">
+          <h3 id="titulo-acompanamiento">Conozcamos a su familia</h3>
+          <p>Los datos de contacto nos ayudan a acompañar cada visita y avisar cualquier novedad.</p>
+
+          <div class="companero-lateral">
+            <p>
+              <strong>Huellitas te acompaña</strong>
+              <span>Un dato a la vez.</span>
+            </p>
+            <img src="../img/perrofoca.jpg" alt="Toby, mascota de Huellitas" class="ilustracion-lateral">
+          </div>
+        </section>
+
+        <p class="alerta-arena">Tus cambios se guardarán solo al pulsar el botón principal.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

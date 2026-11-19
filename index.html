@@ -1,20 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VetCare - Clínica Veterinaria Huellitas</title>
+  <title>Acceso — VetCare | Clínica veterinaria Huellitas</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <header>
-    <h1>VetCare — Clínica Veterinaria "Huellitas"</h1>
+  <!-- Encabezado institucional compartido y barra de navegación de acceso (CU-01) -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Acceso para el equipo</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Accesos del sistema">
+      <ul>
+        <li><a href="index.html" aria-current="page">Acceso seguro</a></li>
+        <li><a href="pages/menu-recepcion.html">Recepción</a></li>
+        <li><a href="pages/agenda-veterinario.html">Veterinaria</a></li>
+        <li><a href="pages/veterinarios-listado.html">Administración</a></li>
+        <li class="lema-navegacion">Cuidamos de quienes más quieres</li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <p>Estructura inicial del proyecto VetCare.</p>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano de bienvenida -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-bienvenida">
+      <hgroup>
+        <p class="migas-pan">Acceso</p>
+        <h2 id="titulo-bienvenida">Bienvenido a bordo</h2>
+        <p>Tu clínica, en buenas manos.</p>
+      </hgroup>
+      <span class="etiqueta-estado">Horario: Lunes a sábado &middot; 08:00 a 18:00</span>
+    </section>
+
+    <section class="contenedor-acceso contenedor-acceso-login" aria-label="Bienvenida e inicio de sesión">
+      <!-- Columna izquierda: tarjeta celeste con mascota Toby (img/perrofoca.jpg) y accesos demostrativos por rol -->
+      <aside class="panel-lateral panel-bienvenida-login" aria-labelledby="titulo-panel">
+        <div>
+          <p class="sobretitulo">UN MAR DE CUIDADOS</p>
+          <h3 id="titulo-panel">Pequeñas huellas.<br>Grandes historias.</h3>
+          <p>Todo lo que necesitas para acompañar a quienes confían en Huellitas.</p>
+        </div>
+
+        <figure class="ilustracion-mascota">
+          <img src="img/perrofoca.jpg" alt="Toby, mascota capitán de la clínica veterinaria Huellitas">
+        </figure>
+
+        <div>
+          <p class="lema-mascota"><strong>Cuidamos de ellos. Te cuidamos a ti.</strong></p>
+          <p class="grupo-acciones">
+            <a href="pages/menu-recepcion.html" class="boton boton-secundario boton-pequeno">Recepción</a>
+            <a href="pages/agenda-veterinario.html" class="boton boton-secundario boton-pequeno">Veterinaria</a>
+            <a href="pages/veterinarios-listado.html" class="boton boton-secundario boton-pequeno">Administración</a>
+          </p>
+        </div>
+      </aside>
+
+      <!-- Columna derecha: tarjeta blanca de formulario de acceso (CU-01) -->
+      <article class="tarjeta-formulario" aria-labelledby="titulo-login">
+        <h2 id="titulo-login">¡Qué bueno verte!</h2>
+        <p class="subtitulo-tarjeta">Ingresa con tu cuenta del equipo de Huellitas.</p>
+
+        <form action="pages/menu-recepcion.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend class="oculto-visualmente">Credenciales de acceso</legend>
+
+            <p class="campo-formulario">
+              <label for="correo">Correo electrónico *</label>
+              <input type="email" id="correo" name="correo" value="sofia@huellitas.ec" required maxlength="80"
+                placeholder="nombre@huellitas.ec" autocomplete="email"
+                title="Ingrese un correo electrónico institucional válido (ej. sofia@huellitas.ec)">
+              <span class="texto-ayuda">Ej: nombre@huellitas.ec</span>
+            </p>
+
+            <p class="campo-formulario">
+              <label for="clave">Contraseña *</label>
+              <input type="password" id="clave" name="clave" required minlength="6" maxlength="30"
+                placeholder="••••••••••••" autocomplete="current-password"
+                title="La contraseña es obligatoria y debe contener al menos 6 caracteres">
+              <span class="texto-ayuda">Usa tu contraseña de acceso.</span>
+            </p>
+
+            <p class="campo-formulario">
+              <label for="rol">Rol en la clínica *</label>
+              <select id="rol" name="rol" required title="Seleccione su rol dentro de la clínica">
+                <option value="">-- Seleccione su rol --</option>
+                <option value="recepcionista" selected>Recepcionista</option>
+                <option value="veterinario">Veterinario</option>
+                <option value="administrador">Administrador</option>
+              </select>
+            </p>
+
+            <p class="campo-casilla">
+              <input type="checkbox" id="recordar" name="recordar" value="si" checked>
+              <label for="recordar">Mantener sesión activa en este equipo</label>
+            </p>
+          </fieldset>
+
+          <p class="acciones-formulario">
+            <button type="reset" class="boton boton-secundario">Limpiar</button>
+            <button type="submit" class="boton boton-primario">+ Entrar a VetCare</button>
+          </p>
+        </form>
+
+        <p class="ayuda-acceso">
+          <span>¿Necesitas ayuda para ingresar?</span>
+          <a href="pages/veterinarios-listado.html">Contacta con la administración de la clínica &rarr;</a>
+        </p>
+
+        <p class="aviso-acceso-exclusivo">&#10003; Acceso exclusivo para el equipo de la clínica Huellitas.</p>
+      </article>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2026 Clínica Veterinaria Huellitas</p>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
   </footer>
 </body>
+
 </html>
