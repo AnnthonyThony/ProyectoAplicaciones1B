@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi agenda — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Dra. Ana Gómez &middot; Veterinaria</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de veterinario">
+      <ul>
+        <li><a href="agenda-veterinario.html" aria-current="page">Mi agenda</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-agenda">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Mi agenda</p>
+        <h2 id="titulo-agenda">Mi agenda</h2>
+        <p>Tu jornada, hora por hora.</p>
+      </hgroup>
+    </section>
+
+    <section class="navegador-fecha" aria-label="Elegir fecha de la agenda">
+      <form class="formulario-busqueda" action="agenda-veterinario.html" method="get">
+        <p class="campo-formulario">
+          <label for="fecha-agenda">Fecha de la agenda</label>
+          <input type="date" id="fecha-agenda" name="fecha" value="2026-11-18" required title="Seleccione la fecha a consultar">
+        </p>
+        <button type="submit" class="boton boton-primario">Ver agenda</button>
+      </form>
+      <p><strong>Martes, 18 de noviembre de 2026</strong></p>
+    </section>
+
+    <section class="agenda-linea-tiempo" aria-label="Citas del día">
+      <article class="bloque-horario">
+        <p class="hora-agenda">08:00</p>
+        <span class="punto-agenda" aria-hidden="true"></span>
+        <div class="tarjeta-turno turno-reservado">
+          <p>
+            <strong>Rocky (Perro) &middot; Vacunación</strong>
+            <span class="subtexto-tabla">Pedro Andrés Vaca &middot; Dra. Ana Gómez</span>
+          </p>
+          <span class="etiqueta-estado estado-atendida">Atendida</span>
+          <span class="grupo-acciones"><a href="historial-clinico.html" class="enlace-accion">&#8599; Ver historial</a></span>
+        </div>
+      </article>
+      <article class="bloque-horario">
+        <p class="hora-agenda">09:30</p>
+        <span class="punto-agenda" aria-hidden="true"></span>
+        <div class="tarjeta-turno turno-reservado">
+          <p>
+            <strong>Luna (Gato) &middot; Desparasitación</strong>
+            <span class="subtexto-tabla">Ana Lucía Torres &middot; Dra. Ana Gómez</span>
+          </p>
+          <span class="etiqueta-estado estado-atendida">Atendida</span>
+          <span class="grupo-acciones"><a href="historial-clinico.html" class="enlace-accion">&#8599; Ver historial</a></span>
+        </div>
+      </article>
+      <article class="bloque-horario">
+        <p class="hora-agenda">16:30</p>
+        <span class="punto-agenda" aria-hidden="true"></span>
+        <div class="tarjeta-turno turno-reservado">
+          <p>
+            <strong>Toby (Perro) &middot; Consulta general</strong>
+            <span class="subtexto-tabla">Juan Carlos Pérez Morales &middot; Dra. Ana Gómez</span>
+          </p>
+          <span class="etiqueta-estado estado-programada">Programada</span>
+          <span class="grupo-acciones"><a href="atencion-registrar.html" class="enlace-accion">&#9998; Atender</a> <a href="historial-clinico.html" class="enlace-accion">&#8599; Ver historial</a></span>
+        </div>
+      </article>
+      <article class="bloque-horario">
+        <p class="hora-agenda">17:30</p>
+        <span class="punto-agenda" aria-hidden="true"></span>
+        <div class="tarjeta-turno turno-reservado">
+          <p>
+            <strong>Michi (Gato) &middot; Vacunación</strong>
+            <span class="subtexto-tabla">María Fernanda Salazar &middot; Dra. Ana Gómez</span>
+          </p>
+          <span class="etiqueta-estado estado-programada">Programada</span>
+          <span class="grupo-acciones"><a href="atencion-registrar.html" class="enlace-accion">&#9998; Atender</a> <a href="historial-clinico.html" class="enlace-accion">&#8599; Ver historial</a></span>
+        </div>
+      </article>
+    </section>
+
+    <aside class="tarjeta-blanca tarjeta-consejo-inferior" aria-labelledby="titulo-resumen-dia">
+      <span class="icono-circular" aria-hidden="true">&#128197;</span>
+      <div class="contenido-consejo">
+        <h3 id="titulo-resumen-dia">Resumen del día</h3>
+        <p>Citas programadas: 2 &middot; Citas atendidas: 2</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
