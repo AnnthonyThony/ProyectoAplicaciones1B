@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mascotas — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Encabezado compartido y navegación del rol Recepcionista -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html">Propietarios</a></li>
+        <li><a href="mascotas-listado.html" aria-current="page">Mascotas</a></li>
+        <li><a href="citas-listado.html">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano con botón primario a la derecha (CU-03) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-mascotas">
+      <hgroup>
+        <p class="migas-pan"><a href="menu-recepcion.html">Inicio</a> &rsaquo; Mascotas</p>
+        <h2 id="titulo-mascotas">Mascotas</h2>
+        <p>Pacientes que forman parte de nuestra familia.</p>
+      </hgroup>
+      <a href="mascotas-nueva.html" class="boton boton-blanco">+ Nueva mascota</a>
+    </section>
+
+    <!-- Franja de contador -->
+    <section class="barra-contador" aria-label="Resumen de mascotas registradas">
+      <p><strong>01</strong> Paciente que forma parte de nuestra familia</p>
+      <span>Información segura, siempre a mano.</span>
+    </section>
+
+    <!-- Listado de pacientes con buscador y tabla accesible (CU-03) -->
+    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-mascotas">
+      <h3 id="titulo-tabla-mascotas">Pacientes de Huellitas</h3>
+
+      <form class="formulario-busqueda barra-busqueda-tabla" action="mascotas-listado.html" method="get">
+        <p class="campo-formulario">
+          <label for="buscar-mascota" class="oculto-visualmente">Buscar por mascota o propietario</label>
+          <input type="search" id="buscar-mascota" name="q" maxlength="50"
+            placeholder="Buscar por mascota o propietario"
+            title="Ingrese el nombre de la mascota o del propietario">
+        </p>
+        <p class="campo-formulario campo-filtro">
+          <label for="filtro-especie" class="oculto-visualmente">Filtrar por especie</label>
+          <select id="filtro-especie" name="especie" title="Filtrar listado por especie">
+            <option value="todas" selected>Todas las especies</option>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+            <option value="Ave">Ave</option>
+            <option value="Roedor">Roedor</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </p>
+        <button type="submit" class="boton boton-secundario">Buscar</button>
+      </form>
+
+      <table class="tabla-datos">
+        <caption>Directorio de mascotas registradas en VetCare</caption>
+        <thead>
+          <tr>
+            <th scope="col">Mascota</th>
+            <th scope="col">Propietario</th>
+            <th scope="col">Raza y peso</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="celda-propietario">
+                <img src="../img/perrofoca.jpg" alt="Foto de Toby" class="avatar-mascota">
+                <span>
+                  <strong>Toby</strong>
+                  <span class="subtexto-tabla">Perro &middot; Macho</span>
+                </span>
+              </span>
+            </td>
+            <td>
+              <span>Juan Carlos Pérez Morales</span>
+              <span class="subtexto-tabla">C.I. 1712345678</span>
+            </td>
+            <td>
+              <span>Labrador &middot; 12,5 kg</span>
+              <span class="subtexto-tabla">Nac. 14/05/2023</span>
+            </td>
+            <td>
+              <span class="grupo-acciones">
+                <a href="historial-clinico.html" class="enlace-accion">&#8599; Ver</a>
+                <a href="mascotas-editar.html" class="enlace-accion">&#9998; Editar</a>
+                <a href="mascotas-eliminar.html" class="enlace-accion-eliminar">&#128465; Eliminar</a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="pie-tabla">
+        <span>Mostrando 1 de 1 registros</span>
+        <span class="paginacion">
+          <span>Anterior</span>
+          <strong>1</strong>
+          <span>Siguiente</span>
+        </span>
+      </footer>
+    </article>
+
+    <!-- Tarjeta inferior informativa -->
+    <aside class="tarjeta-blanca tarjeta-consejo-inferior" aria-labelledby="titulo-historia-huellita">
+      <span class="icono-circular" aria-hidden="true">&#128062;</span>
+      <div class="contenido-consejo">
+        <h3 id="titulo-historia-huellita">Cada huellita tiene su historia</h3>
+        <p>Abre su ficha para consultar los datos del paciente, su historial médico y encontrar a su propietario.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

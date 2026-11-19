@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar mascota — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html">Propietarios</a></li>
+        <li><a href="mascotas-listado.html" aria-current="page">Mascotas</a></li>
+        <li><a href="citas-listado.html">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano (CU-03) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-eliminar-mascota">
+      <hgroup>
+        <p class="migas-pan">
+          <a href="menu-recepcion.html">Inicio</a> &rsaquo;
+          <a href="mascotas-listado.html">Mascotas</a> &rsaquo; Eliminar
+        </p>
+        <h2 id="titulo-eliminar-mascota">Eliminar mascota</h2>
+        <p>Una decisión importante merece una pausa.</p>
+      </hgroup>
+    </section>
+
+    <!-- Tarjeta centrada de confirmación (CU-03 flujo Eliminar) -->
+    <section class="tarjeta-confirmacion" aria-labelledby="titulo-confirmar-baja">
+      <header class="encabezado-confirmacion">
+        <span class="icono-advertencia" aria-hidden="true">!</span>
+        <div>
+          <h2 id="titulo-confirmar-baja">¿Seguro que quieres eliminar este registro?</h2>
+          <p>Tómate un momento. Queremos evitar una despedida por error.</p>
+        </div>
+      </header>
+
+      <article class="ficha-resumen-eliminacion" aria-label="Datos de la mascota a eliminar">
+        <div class="celda-propietario">
+          <img src="../img/perrofoca.jpg" alt="Foto de Toby" class="avatar-mascota">
+          <div>
+            <h3>Toby</h3>
+            <p class="subtexto-tabla">Mascota &middot; Perro &middot; Labrador</p>
+          </div>
+        </div>
+
+        <dl class="lista-resumen">
+          <dt>Peso</dt>
+          <dd>12,5 kg</dd>
+
+          <dt>Propietario</dt>
+          <dd>Juan Carlos Pérez Morales (C.I. 1712345678)</dd>
+
+          <dt>Última atención</dt>
+          <dd>10 nov 2026 &middot; Vacunación</dd>
+        </dl>
+      </article>
+
+      <p class="alerta-arena">
+        &#9888; Eliminarás la ficha de Toby. Comprueba que no necesitas sus datos antes de continuar.
+      </p>
+
+      <p class="texto-error">Esta acción no se puede deshacer.</p>
+
+      <form action="mascotas-listado.html" method="get">
+        <div class="acciones-formulario">
+          <a href="mascotas-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+          <button type="submit" class="boton boton-peligro">&#128465; Confirmar eliminación</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
