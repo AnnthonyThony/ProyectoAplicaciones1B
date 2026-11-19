@@ -3,7 +3,7 @@
 Proyecto del Bimestre 1 de la asignatura **Desarrollo de Aplicaciones Web**, implementado exclusivamente con **HTML5 semántico** y **CSS3 puro** (sin JavaScript ni frameworks CSS).
 
 ## Enlace a GitHub Pages
-- Sitio publicado: https://annthonythony.github.io/ProyectoAplicaciones1B/ *(pendiente de activar en Settings -> Pages)*
+- Sitio publicado: https://annthonythony.github.io/ProyectoAplicaciones1B/
 
 ## Integrantes del grupo y reparto del trabajo
 1. **Anthony (Integrante 1):** Arquitectura base, hoja de estilos global (`css/style.css`), inicio de sesión (`index.html`), menú de recepción y módulo CRUD de Propietarios; Visión (3.1), CU-01/CU-02 (3.2) y Priorización MoSCoW (3.4).
