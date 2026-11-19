@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar atención médica — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Encabezado compartido y navegación del rol Veterinario -->
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#129658;</span>
+        <p>
+          <strong>Dra. Ana Gómez &middot; Veterinaria</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú del veterinario">
+      <ul>
+        <li><a href="agenda-veterinario.html">Inicio</a></li>
+        <li><a href="agenda-veterinario.html" aria-current="page">Agenda del día</a></li>
+        <li><a href="historial-clinico.html">Historial clínico</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <!-- Banner Hero Océano (CU-07) -->
+    <section class="encabezado-pagina" aria-labelledby="titulo-atencion">
+      <hgroup>
+        <p class="migas-pan">
+          <a href="agenda-veterinario.html">Inicio</a> &rsaquo;
+          <a href="agenda-veterinario.html">Agenda</a> &rsaquo; Registrar atención
+        </p>
+        <h2 id="titulo-atencion">Registrar atención médica</h2>
+        <p>Lo que registras hoy cuida su mañana.</p>
+      </hgroup>
+    </section>
+
+    <div class="contenedor-acceso">
+      <!-- Formulario clínico izquierda -->
+      <section class="tarjeta-formulario" aria-labelledby="titulo-form-atencion">
+        <h3 id="titulo-form-atencion" class="oculto-visualmente">Formulario de atención médica</h3>
+
+        <form action="agenda-veterinario.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend>&#129658; Datos de la atención</legend>
+
+            <div class="grilla-formulario">
+              <p class="campo-formulario campo-completo">
+                <label for="motivo-consulta">Motivo de consulta</label>
+                <input type="text" id="motivo-consulta" name="motivo" value="Revisión general" readonly>
+                <span class="texto-ayuda">Servicio programado en la cita.</span>
+              </p>
+
+              <p class="campo-formulario">
+                <label for="peso-actual">Peso actual (kg) *</label>
+                <input type="number" id="peso-actual" name="peso" required
+                  min="0.1" max="120" step="0.1"
+                  title="Ingrese un peso válido entre 0,1 y 120 kg con un decimal"
+                  value="12.5" placeholder="Ej: 12.5">
+                <span class="texto-ayuda">Ej: 12.5 kg (rango 0.1 a 120 kg)</span>
+              </p>
+
+              <p class="campo-formulario">
+                <label for="temperatura">Temperatura (&deg;C)</label>
+                <input type="number" id="temperatura" name="temperatura"
+                  min="35.0" max="42.5" step="0.1"
+                  title="Temperatura corporal en grados Celsius"
+                  value="38.5" placeholder="Ej: 38.5">
+                <span class="texto-ayuda">Ej: 38.5 &deg;C (opcional)</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio">
+            <legend>&#128221; Evaluación y cuidados</legend>
+
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="diagnostico">Diagnóstico *</label>
+                <textarea id="diagnostico" name="diagnostico" required
+                  minlength="5" maxlength="500"
+                  title="Ingrese el diagnóstico clínico (mínimo 5, máximo 500 caracteres)"
+                  placeholder="Escribe el diagnóstico clínico"></textarea>
+                <span class="texto-ayuda">Usa términos claros y completos (5 a 500 caracteres).</span>
+              </p>
+
+              <p class="campo-formulario">
+                <label for="tratamiento">Tratamiento e indicaciones *</label>
+                <textarea id="tratamiento" name="tratamiento" required
+                  minlength="5" maxlength="500"
+                  title="Ingrese el tratamiento prescrito (mínimo 5, máximo 500 caracteres)"
+                  placeholder="Cuidados y recomendaciones"></textarea>
+                <span class="texto-ayuda">Incluye dosis y frecuencia, si aplica (5 a 500 caracteres).</span>
+              </p>
+
+              <p class="campo-formulario campo-completo">
+                <label for="observaciones-atencion">Observaciones adicionales</label>
+                <textarea id="observaciones-atencion" name="observaciones" maxlength="300"
+                  placeholder="Indicaciones de próximo control o cuidados en casa (máx. 300 caracteres)"></textarea>
+                <span class="texto-ayuda">Opcional &middot; Máximo 300 caracteres.</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <p class="texto-exito">Al guardar, la cita pasará automáticamente de Programada a Atendida.</p>
+
+          <footer class="pie-formulario">
+            <span class="nota-obligatorios">* Campos obligatorios</span>
+            <div class="acciones-formulario">
+              <a href="agenda-veterinario.html" class="boton boton-secundario">&rarr; Cancelar</a>
+              <button type="submit" class="boton boton-primario">+ Guardar atención</button>
+            </div>
+          </footer>
+        </form>
+      </section>
+
+      <!-- Panel derecho del paciente -->
+      <aside class="columna-lateral" aria-label="Datos del paciente atendido">
+        <section class="tarjeta-celeste">
+          <h3>Nuestro paciente de hoy</h3>
+          <p>17 nov 2026 &middot; 09:00</p>
+          <p class="subtexto-tabla">Consulta general &middot; Dra. Ana Gómez</p>
+
+          <div class="companero-lateral">
+            <img src="../img/perrofoca.jpg" alt="Foto de Toby" class="avatar-mascota">
+            <div>
+              <strong>Toby</strong>
+              <span>Labrador &middot; 12,5 kg</span>
+              <span>Propietario: Juan Carlos Pérez Morales</span>
+            </div>
+          </div>
+        </section>
+
+        <p class="alerta-arena">
+          Tus cambios se guardarán solo al pulsar el botón principal.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
