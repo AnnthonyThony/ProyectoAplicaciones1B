@@ -69,7 +69,7 @@ Construir **VetCare**, un sistema web transaccional estático e intuitivo desarr
 * **Restricciones Tecnológicas:** Uso exclusivo de HTML5 semántico (`header`, `nav`, `main`, `section`, `article`, `aside`, `footer`) y CSS/CSS3 externo (`css/style.css`). Prohibido usar JavaScript, estilos en línea (`style="..."`) o frameworks CSS (Bootstrap, Tailwind).
 * **Restricciones de Navegadores y Estándares:** Visualización y validación idénticas en Google Chrome y Mozilla Firefox; aprobación sin errores en los validadores de la W3C (HTML y CSS); contraste de color mínimo nivel AA de WCAG.
 * **Restricciones de Negocio:** Cédula de 10 dígitos numéricos; celular de 10 dígitos que inicia en `09`; nombres/apellidos solo letras y espacios (2–50 caracteres); peso de mascota entre 0,1 y 120 kg con un decimal; citas de lunes a sábado de 08:00 a 18:00 cada 30 min; servicios entre \$1,00 y \$500,00.
-* **Supuestos:** Todo el equipo utiliza un Diccionario de Datos Ficticios Oficial (donde la mascota “Toby” pertenece siempre al propietario Juan Carlos Pérez Morales, C.I. `1712345678`) para garantizar coherencia en las 22 pantallas estáticas.
+* **Supuestos:** Todo el equipo utiliza un Diccionario de Datos Ficticios Oficial para garantizar coherencia en las 22 pantallas estáticas, con los cuatro registros oficiales del directorio de propietarios y sus mascotas asociadas: **Juan Carlos Pérez Morales** (C.I. `1712345678`, mascota `Toby`), **Pedro Andrés Vaca** (C.I. `1714567890`, mascota `Rocky`), **Ana Lucía Torres** (C.I. `1713456789`, mascota `Luna`) y **María Fernanda Salazar** (C.I. `1718765432`, mascota `Michi`).
 
 ### Glosario
 * **Agenda del Día:** Listado cronológico de las citas *Programadas* asignadas a un médico veterinario para una fecha específica.
@@ -99,7 +99,7 @@ Construir **VetCare**, un sistema web transaccional estático e intuitivo desarr
 | **CU-08** | Consultar historial clínico | Veterinario | Ver las atenciones anteriores de una mascota. |
 | **CU-09** | Gestionar veterinarios | Administrador | Registrar, consultar, editar y eliminar veterinarios. |
 | **CU-10** | Gestionar servicios | Administrador | Registrar, consultar, editar y eliminar servicios y sus precios. |
-| **CU-11** | Consultar panel de recepción y cerrar sesión | Recepcionista / Todos | Acceder al panel principal de recepción y cerrar la sesión activa para volver al inicio. |
+| **CU-11** | Consultar panel de recepción | Recepcionista | Visualizar el panel principal de recepción con el resumen del día, acceder a los módulos operativos o salir de la sesión. |
 
 ---
 
@@ -185,17 +185,17 @@ Construir **VetCare**, un sistema web transaccional estático e intuitivo desarr
 
 ---
 
-#### 6. `CU-11 Consultar panel de recepción y cerrar sesión`
+#### 6. `CU-11 Consultar panel de recepción`
 
 | Campo | Especificación |
 | :--- | :--- |
-| **ID y nombre** | **CU-11 Consultar panel de recepción y cerrar sesión** |
-| **Actor** | Recepcionista (y todos los roles en el cierre de sesión) |
-| **Descripción** | Permite visualizar el panel principal de recepción con indicadores y accesos directos a los módulos operativos, así como cerrar la sesión activa para regresar al inicio. |
-| **Precondiciones** | El usuario inició sesión (CU-01). |
-| **Flujo básico** | 1. Tras iniciar sesión como recepcionista, el sistema muestra el panel de recepción con el resumen operativo y accesos rápidos.<br>2. La recepcionista elige un módulo de trabajo (Propietarios, Mascotas o Citas) o pulsa “Cerrar sesión” en el menú superior.<br>3. Si pulsa “Cerrar sesión”, el sistema finaliza la sesión actual y regresa a la pantalla de inicio de sesión. |
-| **Flujos alternos** | 2a. El usuario cambia de módulo en cualquier momento empleando la barra de navegación principal (`nav`). |
-| **Postcondiciones** | El usuario se sitúa en el módulo seleccionado o regresa a la pantalla de inicio de sesión (`index.html`). |
+| **ID y nombre** | **CU-11 Consultar panel de recepción** |
+| **Actor** | Recepcionista |
+| **Descripción** | Permite a la recepcionista visualizar el panel principal de recepción con el resumen operativo del día y los accesos directos a los módulos de trabajo. |
+| **Precondiciones** | La recepcionista inició sesión (CU-01). |
+| **Flujo básico** | 1. Tras iniciar sesión como recepcionista, el sistema muestra el panel de recepción con el resumen operativo del día (“Hoy en Huellitas”) y los accesos rápidos.<br>2. La recepcionista consulta los indicadores de la jornada y selecciona un acceso rápido (“+ Agendar cita”, “+ Nuevo propietario”) o un módulo de trabajo (“Propietarios”, “Mascotas” o “Citas”).<br>3. El sistema abre la pantalla del módulo seleccionado.<br>4. Al finalizar sus actividades en el panel, la recepcionista pulsa la opción “Salir” en el menú superior para cerrar su sesión y regresar al inicio. |
+| **Flujos alternos** | 2a. La recepcionista cambia de módulo en cualquier momento empleando la barra de navegación principal (`nav`).<br>2b. La recepcionista pulsa “Salir” directamente desde el panel: el sistema cierra la sesión activa y regresa a la pantalla de inicio de sesión (`index.html`). |
+| **Postcondiciones** | La recepcionista accede al módulo operativo seleccionado o regresa a la pantalla de inicio de sesión (`index.html`) al finalizar su jornada. |
 | **Reglas y validaciones** | Uso de estructura semántica (`header`, `nav`, `main`, `section`, `article`, `aside`, `footer`) y enlaces de navegación válidos sin enlaces rotos. |
 | **Pantallas** | menu-recepcion.html, index.html, propietarios-listado.html, propietarios-nuevo.html, mascotas-listado.html, citas-listado.html, citas-agendar.html |
 
@@ -207,14 +207,14 @@ El grupo prioriza los casos de uso empleando la técnica **MoSCoW** (*Must, Shou
 
 | ID | Caso de uso | Valor (1–5) | Esfuerzo (1–5) | Prioridad | Justificación y responsable |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **CU-01** | Iniciar sesión | 5 | 2 | **Must** | Es el punto de entrada obligatorio del sistema (`index.html`) que autentica y distribuye la navegación hacia los tres roles operativos. **Responsable: Integrante 1 (Anthony).** |
-| **CU-02** | Gestionar propietarios | 5 | 4 | **Must** | Un propietario registrado es requisito indispensable para crear mascotas y agendar citas; valida cédula de 10 dígitos y celular `09XXXXXXXX` en 4 pantallas CRUD. **Responsable: Integrante 1 (Anthony).** |
-| **CU-03** | Gestionar mascotas | 5 | 5 | **Must** | La mascota es el paciente central de la clínica. Cubre las 4 operaciones CRUD y la mayor variedad de controles HTML5 (`datalist`, `radio`, `date`, `number` con `step="0.1"`). **Responsable: Integrante 2 (Maria).** |
-| **CU-04** | Agendar cita | 5 | 4 | **Must** | Es la transacción central del negocio. Asocia mascota, servicio, veterinario, fecha y bloque de 30 minutos (lunes a sábado, 08:00–18:00). **Responsable: Integrante 3 (Nayia).** |
-| **CU-05** | Gestionar citas | 4 | 3 | **Should** | Permite consultar las citas existentes, reprogramar fecha/hora/veterinario o cancelarlas exigiendo un motivo de hasta 200 caracteres. **Responsable: Integrante 3 (Nayia).** |
-| **CU-06** | Consultar agenda del día | 5 | 2 | **Must** | Es la vista operativa principal del médico veterinario para revisar sus citas programadas por fecha y pasar a atender al paciente. **Responsable: Integrante 3 (Nayia).** |
-| **CU-07** | Registrar atención médica | 5 | 3 | **Must** | Permite documentar peso, diagnóstico y tratamiento durante la consulta y cambia el estado de la cita a *Atendida*. **Responsable: Integrante 2 (Maria).** |
-| **CU-08** | Consultar historial clínico | 4 | 3 | **Should** | Permite al veterinario revisar las atenciones previas de una mascota y su detalle antes de emitir un nuevo diagnóstico. **Responsable: Integrante 2 (Maria).** |
-| **CU-09** | Gestionar veterinarios | 3 | 3 | **Should** | Permite al administrador mantener actualizado el personal médico disponible para asignar citas en `CU-04`. **Responsable: Integrante 3 (Nayia).** |
-| **CU-10** | Gestionar servicios | 3 | 3 | **Should** | Permite al administrador gestionar el catálogo de servicios veterinarios con precios validados entre \$1,00 y \$500,00. **Responsable: Integrante 3 (Nayia).** |
-| **CU-11** | Consultar panel de recepción y cerrar sesión | 3 | 1 | **Could** | Complementa la navegación posterior al inicio de sesión en recepción (`menu-recepcion.html`) y permite regresar a `index.html`. **Responsable: Integrante 1 (Anthony).** |
+| **CU-01** | Iniciar sesión | 5 | 2 | **Must** | Puerta de entrada obligatoria al sistema (`index.html`) que valida correo, contraseña y rol para redirigir a los menús de Recepcionista, Veterinario y Administrador. **Responsable: Integrante 1 (Anthony).** |
+| **CU-02** | Gestionar propietarios | 5 | 4 | **Must** | Requisito previo indispensable para registrar mascotas y agendar citas; cubre los 4 flujos CRUD (`propietarios-listado.html`, `propietarios-nuevo.html`, `propietarios-editar.html`, `propietarios-eliminar.html`) validando cédula de 10 dígitos y celular `09XXXXXXXX`. **Responsable: Integrante 1 (Anthony).** |
+| **CU-03** | Gestionar mascotas | 5 | 5 | **Must** | La mascota es el paciente central de la clínica; cubre los 4 flujos CRUD (`mascotas-listado.html`, `mascotas-nueva.html`, `mascotas-editar.html`, `mascotas-eliminar.html`) con validación de especie, raza con `datalist`, sexo, fecha de nacimiento y peso (0.1–120 kg). **Responsable: Integrante 2 (Maria).** |
+| **CU-04** | Agendar cita | 5 | 4 | **Must** | Es la transacción central del negocio (`citas-agendar.html`, `citas-listado.html`); vincula propietario (`search` con `datalist`), mascota, servicio, veterinario, fecha y hora en bloques de 30 minutos (08:00–17:30) en estado *Programada*. **Responsable: Integrante 3 (Nayia).** |
+| **CU-05** | Gestionar citas | 4 | 3 | **Should** | Permite consultar y filtrar citas por estado, reprogramar fecha/hora/veterinario y cancelar citas pasando a estado *Cancelada* con motivo obligatorio (máx. 200 caracteres) y confirmación en `citas-gestionar.html`. **Responsable: Integrante 3 (Nayia).** |
+| **CU-06** | Consultar agenda del día | 5 | 2 | **Must** | Vista operativa principal del veterinario (`agenda-veterinario.html`) para consultar sus citas ordenadas por hora según la fecha seleccionada y pasar a atender al paciente o ver su historial. **Responsable: Integrante 3 (Nayia).** |
+| **CU-07** | Registrar atención médica | 5 | 3 | **Must** | Permite al veterinario registrar en `atencion-registrar.html` el peso actual (0.1–120 kg), diagnóstico y tratamiento (5–500 caracteres), cambiando el estado de la cita a *Atendida*. **Responsable: Integrante 2 (Maria).** |
+| **CU-08** | Consultar historial clínico | 4 | 3 | **Should** | Permite consultar la ficha del paciente, filtrar atenciones previas y ver el detalle clínico completo de cada consulta (`historial-clinico.html`, `historial-detalle.html`). **Responsable: Integrante 2 (Maria).** |
+| **CU-09** | Gestionar veterinarios | 3 | 3 | **Should** | Permite al administrador ejecutar los 4 flujos CRUD del personal médico y sus especialidades (`veterinarios-listado.html`, `veterinarios-form.html`, `admin-eliminar.html`) disponible para `CU-04`. **Responsable: Integrante 3 (Nayia).** |
+| **CU-10** | Gestionar servicios | 3 | 3 | **Should** | Permite al administrador ejecutar los 4 flujos CRUD del catálogo de servicios (`servicios-listado.html`, `servicios-form.html`, `admin-eliminar.html`) con nombre único y precios validados entre \$1,00 y \$500,00. **Responsable: Integrante 3 (Nayia).** |
+| **CU-11** | Consultar panel de recepción | 3 | 1 | **Could** | Permite a la recepcionista visualizar el panel principal con el resumen operativo del día (`menu-recepcion.html`), acceder a los módulos de trabajo y realizar la actividad de salir hacia `index.html`. **Responsable: Integrante 1 (Anthony).** |
