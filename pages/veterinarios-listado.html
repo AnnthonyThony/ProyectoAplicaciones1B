@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinarios — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Administrador &middot; Huellitas</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de administración">
+      <ul>
+        <li><a href="veterinarios-listado.html" aria-current="page">Veterinarios</a></li>
+        <li><a href="servicios-listado.html">Servicios</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-vets">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Veterinarios</p>
+        <h2 id="titulo-vets">Veterinarios</h2>
+        <p>El equipo que cuida a nuestros pacientes.</p>
+      </hgroup>
+      <a href="veterinarios-form.html" class="boton boton-blanco">+ Nuevo veterinario</a>
+    </section>
+
+    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-vets">
+      <h3 id="titulo-tabla-vets">Equipo veterinario</h3>
+
+      <form class="formulario-busqueda barra-busqueda-tabla" action="veterinarios-listado.html" method="get">
+        <p class="campo-formulario">
+          <label for="buscar-vet" class="oculto-visualmente">Buscar veterinario</label>
+          <input type="search" id="buscar-vet" name="q" maxlength="50" placeholder="Buscar por nombre o cédula" title="Buscar veterinario">
+        </p>
+        <button type="submit" class="boton boton-secundario">Buscar</button>
+      </form>
+
+      <table class="tabla-datos">
+        <caption>Listado de veterinarios de la clínica</caption>
+        <thead>
+          <tr>
+            <th scope="col">Cédula</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1710123456</td>
+            <td>Ana Gómez</td>
+            <td>Medicina general</td>
+            <td>0987654321</td>
+            <td>ana.gomez@huellitas.ec</td>
+            <td><span class="etiqueta-estado estado-activo">Activo</span></td>
+            <td><span class="grupo-acciones"><a href="veterinarios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#veterinario" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+          <tr>
+            <td>1712987654</td>
+            <td>Luis Andrade</td>
+            <td>Cirugía</td>
+            <td>0998765432</td>
+            <td>luis.andrade@huellitas.ec</td>
+            <td><span class="etiqueta-estado estado-activo">Activo</span></td>
+            <td><span class="grupo-acciones"><a href="veterinarios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#veterinario" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+          <tr>
+            <td>1715456789</td>
+            <td>Sofía Paredes</td>
+            <td>Animales exóticos</td>
+            <td>0961234567</td>
+            <td>sofia.paredes@huellitas.ec</td>
+            <td><span class="etiqueta-estado estado-activo">Activo</span></td>
+            <td><span class="grupo-acciones"><a href="veterinarios-form.html" class="enlace-accion">&#9998; Editar</a> <a href="admin-eliminar.html#veterinario" class="enlace-accion-eliminar">&#128465; Eliminar</a></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="pie-tabla">
+        <span>Mostrando 3 registros</span>
+        <span class="paginacion">
+          <span>Anterior</span>
+          <strong>1</strong>
+          <span>Siguiente</span>
+        </span>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

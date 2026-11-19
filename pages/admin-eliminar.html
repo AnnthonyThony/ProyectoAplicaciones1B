@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar eliminación — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Administrador &middot; Huellitas</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de administración">
+      <ul>
+        <li><a href="veterinarios-listado.html">Veterinarios</a></li>
+        <li><a href="servicios-listado.html">Servicios</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-eliminar">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Administración &rsaquo; Eliminar</p>
+        <h2 id="titulo-eliminar">Confirmar eliminación</h2>
+        <p>Revisemos juntos antes de continuar.</p>
+      </hgroup>
+    </section>
+
+    <article class="tarjeta-confirmacion" id="veterinario" aria-labelledby="titulo-veterinario">
+      <header class="encabezado-confirmacion">
+        <span class="icono-advertencia" aria-hidden="true">!</span>
+        <hgroup>
+          <h2 id="titulo-veterinario">¿Seguro que quieres eliminar al veterinario?</h2>
+          <p>Tómate un momento. Queremos evitar una despedida por error.</p>
+        </hgroup>
+      </header>
+
+      <section class="ficha-resumen-eliminacion" aria-label="Datos del registro seleccionado">
+        <h3>Sofía Paredes</h3>
+        <p class="subtexto-tabla">Veterinaria &middot; Cédula 1715456789</p>
+
+        <dl class="lista-resumen">
+          <dt>Especialidad</dt>
+          <dd>Animales exóticos</dd>
+          <dt>Celular</dt>
+          <dd>0961234567</dd>
+          <dt>Correo</dt>
+          <dd>sofia.paredes@huellitas.ec</dd>
+        </dl>
+      </section>
+
+      <p class="alerta-arena">&#9888; Si el veterinario tiene citas Programadas, deben reprogramarse antes de eliminarlo.</p>
+      <p class="texto-error">Esta acción no se puede deshacer.</p>
+
+      <form action="veterinarios-listado.html" method="get">
+        <fieldset class="fieldset-limpio">
+          <legend class="oculto-visualmente">Confirmación de eliminación</legend>
+          <p class="campo-casilla">
+            <input type="checkbox" id="confirmar-veterinario" name="confirmar" value="si" required title="Debe marcar esta casilla para confirmar la eliminación">
+            <label for="confirmar-veterinario">Confirmo la eliminación definitiva de este registro *</label>
+          </p>
+        </fieldset>
+
+        <p class="acciones-formulario">
+          <a href="veterinarios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+          <button type="submit" class="boton boton-peligro">&#128465; Confirmar eliminación</button>
+        </p>
+      </form>
+    </article>
+
+    <article class="tarjeta-confirmacion" id="servicio" aria-labelledby="titulo-servicio">
+      <header class="encabezado-confirmacion">
+        <span class="icono-advertencia" aria-hidden="true">!</span>
+        <hgroup>
+          <h2 id="titulo-servicio">¿Seguro que quieres eliminar este servicio?</h2>
+          <p>Tómate un momento. Queremos evitar una despedida por error.</p>
+        </hgroup>
+      </header>
+
+      <section class="ficha-resumen-eliminacion" aria-label="Datos del registro seleccionado">
+        <h3>Desparasitación</h3>
+        <p class="subtexto-tabla">Servicio del catálogo</p>
+
+        <dl class="lista-resumen">
+          <dt>Descripción</dt>
+          <dd>Tratamiento antiparasitario interno y externo.</dd>
+          <dt>Precio</dt>
+          <dd>$ 8,00</dd>
+        </dl>
+      </section>
+
+      <p class="alerta-arena">&#9888; Si el servicio tiene citas Programadas, se mostrará una advertencia antes de eliminarlo.</p>
+      <p class="texto-error">Esta acción no se puede deshacer.</p>
+
+      <form action="servicios-listado.html" method="get">
+        <fieldset class="fieldset-limpio">
+          <legend class="oculto-visualmente">Confirmación de eliminación</legend>
+          <p class="campo-casilla">
+            <input type="checkbox" id="confirmar-servicio" name="confirmar" value="si" required title="Debe marcar esta casilla para confirmar la eliminación">
+            <label for="confirmar-servicio">Confirmo la eliminación definitiva de este registro *</label>
+          </p>
+        </fieldset>
+
+        <p class="acciones-formulario">
+          <a href="servicios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+          <button type="submit" class="boton boton-peligro">&#128465; Confirmar eliminación</button>
+        </p>
+      </form>
+    </article>
+
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

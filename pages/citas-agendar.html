@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar cita — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html" aria-current="page">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-agendar">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Citas &rsaquo; Agendar</p>
+        <h2 id="titulo-agendar">Agendar cita</h2>
+        <p>Reservemos un momento para su mascota.</p>
+      </hgroup>
+    </section>
+
+    <section class="contenedor-acceso" aria-label="Formulario para agendar cita">
+      <article class="tarjeta-formulario" aria-labelledby="titulo-form-cita">
+        <h2 id="titulo-form-cita" class="oculto-visualmente">Formulario de cita</h2>
+        <form action="citas-listado.html" method="get">
+          <fieldset class="fieldset-limpio paso-formulario">
+            <legend><span class="numero-paso" aria-hidden="true">1</span> Propietario y mascota</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="propietario">Propietario *</label>
+                <input type="search" id="propietario" name="propietario" list="lista-propietarios" required placeholder="Cédula o apellido" autocomplete="off" title="Escriba la cédula o el apellido y elija de la lista">
+                <datalist id="lista-propietarios">
+                  <option value="1712345678 – Juan Carlos Pérez Morales"></option>
+                  <option value="1718765432 – María Fernanda Salazar"></option>
+                  <option value="1714567890 – Pedro Andrés Vaca"></option>
+                  <option value="1713456789 – Ana Lucía Torres"></option>
+                </datalist>
+                <span class="texto-ayuda">Escriba la cédula o el apellido y elija de la lista.</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="mascota">Mascota *</label>
+                <select id="mascota" name="mascota" required>
+                  <option value="">Seleccione una mascota</option>
+                  <option value="toby">Toby – Perro (Juan Carlos Pérez Morales)</option>
+                  <option value="michi">Michi – Gato (María Fernanda Salazar)</option>
+                  <option value="rocky">Rocky – Perro (Pedro Andrés Vaca)</option>
+                  <option value="luna">Luna – Gato (Ana Lucía Torres)</option>
+                </select>
+                <span class="texto-ayuda">¿No está registrada? <a href="mascotas-nueva.html">Registrar nueva mascota</a></span>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio paso-formulario">
+            <legend><span class="numero-paso" aria-hidden="true">2</span> Servicio y veterinario</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="servicio">Servicio *</label>
+                <select id="servicio" name="servicio" required>
+                  <option value="">Seleccione un servicio</option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="vacunacion">Vacunación</option>
+                  <option value="desparasitacion">Desparasitación</option>
+                  <option value="cirugia">Cirugía menor</option>
+                </select>
+              </p>
+              <p class="campo-formulario">
+                <label for="veterinario">Veterinario *</label>
+                <select id="veterinario" name="veterinario" required>
+                  <option value="">Seleccione un veterinario</option>
+                  <option value="gomez">Dra. Ana Gómez</option>
+                  <option value="andrade">Dr. Luis Andrade</option>
+                  <option value="paredes">Dra. Sofía Paredes</option>
+                </select>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-limpio paso-formulario">
+            <legend><span class="numero-paso" aria-hidden="true">3</span> Fecha y hora</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario">
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required min="2026-11-18" title="Atención de lunes a sábado. No se agendan fechas pasadas.">
+                <span class="texto-ayuda">Atención de lunes a sábado. No se agendan fechas pasadas.</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="hora">Hora *</label>
+                <input type="time" id="hora" name="hora" required min="08:00" max="17:30" step="1800" title="Entre 08:00 y 17:30, en bloques de 30 minutos">
+                <span class="texto-ayuda">Entre 08:00 y 17:30, en bloques de 30 minutos.</span>
+              </p>
+              <p class="campo-formulario">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" value="Programada" readonly>
+                <span class="texto-ayuda">Toda cita nueva inicia como Programada.</span>
+              </p>
+              <p class="campo-formulario campo-completo">
+                <label for="observaciones">Observaciones (opcional)</label>
+                <textarea id="observaciones" name="observaciones" rows="3" maxlength="200" placeholder="Ej: la mascota llega en transportadora"></textarea>
+                <span class="texto-ayuda">Máximo 200 caracteres.</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <footer class="pie-formulario">
+            <span class="nota-obligatorios">* Campos obligatorios</span>
+            <p class="acciones-formulario">
+              <a href="citas-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+              <button type="reset" class="boton boton-secundario">Limpiar</button>
+              <button type="submit" class="boton boton-primario">+ Guardar cita</button>
+            </p>
+          </footer>
+        </form>
+      </article>
+
+      <aside class="columna-lateral" aria-labelledby="titulo-horario">
+        <section class="panel-lateral">
+          <h3 id="titulo-horario">Horario de atención</h3>
+          <ul>
+            <li>De lunes a sábado (no se atiende los domingos).</li>
+            <li>De 08:00 a 18:00, en bloques de 30 minutos; la última cita inicia a las 17:30.</li>
+            <li>No se agendan citas en fechas pasadas.</li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

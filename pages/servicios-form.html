@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Administrador &middot; Huellitas</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de administración">
+      <ul>
+        <li><a href="veterinarios-listado.html">Veterinarios</a></li>
+        <li><a href="servicios-listado.html" aria-current="page">Servicios</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-serv-form">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Servicios &rsaquo; Formulario</p>
+        <h2 id="titulo-serv-form">Datos del servicio</h2>
+        <p>Agrega o actualiza un servicio del catálogo.</p>
+      </hgroup>
+    </section>
+
+    <section class="contenedor-acceso" aria-label="Formulario de servicio">
+      <article class="tarjeta-formulario" aria-labelledby="titulo-form-serv">
+        <h2 id="titulo-form-serv" class="oculto-visualmente">Formulario de servicio</h2>
+        <form action="servicios-listado.html" method="get">
+          <fieldset class="fieldset-limpio">
+            <legend>&#128203; Información del servicio</legend>
+            <div class="grilla-formulario">
+              <p class="campo-formulario campo-completo">
+                <label for="serv-nombre">Nombre del servicio *</label>
+                <input type="text" id="serv-nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,50}" minlength="3" maxlength="50" placeholder="Ej: Consulta general" autocomplete="off" title="Solo letras y espacios, entre 3 y 50 caracteres">
+                <span class="texto-ayuda">Solo letras y espacios (3 a 50). Debe ser único.</span>
+              </p>
+              <p class="campo-formulario campo-completo">
+                <label for="serv-descripcion">Descripción (opcional)</label>
+                <textarea id="serv-descripcion" name="descripcion" rows="3" maxlength="200" placeholder="Describa brevemente el servicio"></textarea>
+                <span class="texto-ayuda">Máximo 200 caracteres.</span>
+              </p>
+              <p class="campo-formulario campo-completo">
+                <label for="serv-precio">Precio (USD) *</label>
+                <input type="number" id="serv-precio" name="precio" required min="1.00" max="500.00" step="0.01" placeholder="15.00" title="Precio entre 1,00 y 500,00 USD">
+                <span class="texto-ayuda">Entre $1,00 y $500,00.</span>
+              </p>
+            </div>
+          </fieldset>
+
+          <footer class="pie-formulario">
+            <span class="nota-obligatorios">* Campos obligatorios</span>
+            <p class="acciones-formulario">
+              <a href="servicios-listado.html" class="boton boton-secundario">&rarr; Cancelar</a>
+              <button type="reset" class="boton boton-secundario">Limpiar</button>
+              <button type="submit" class="boton boton-primario">+ Guardar servicio</button>
+            </p>
+          </footer>
+        </form>
+      </article>
+
+      <aside class="columna-lateral" aria-labelledby="titulo-ayuda-serv">
+        <section class="panel-lateral">
+          <h3 id="titulo-ayuda-serv">Antes de guardar</h3>
+          <p>El precio se muestra en dólares y se usa al agendar la cita. Cada servicio debe tener un nombre único.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>

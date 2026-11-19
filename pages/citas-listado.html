@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citas — VetCare | Clínica veterinaria Huellitas</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="encabezado-sitio">
+    <div class="barra-identidad">
+      <div class="marca marca-fila">
+        <span class="icono-huella" aria-hidden="true">&#128062;</span>
+        <hgroup>
+          <h1>VetCare</h1>
+          <p>Clínica veterinaria Huellitas</p>
+        </hgroup>
+      </div>
+
+      <p class="ubicacion-clinica">QUITO, ECUADOR</p>
+
+      <div class="perfil-usuario">
+        <span class="avatar-usuario" aria-hidden="true">&#128100;</span>
+        <p>
+          <strong>Sofía &middot; Recepcionista</strong>
+          <span>Mi cuenta &#8599;</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navegacion-principal" aria-label="Menú de recepción">
+      <ul>
+        <li><a href="menu-recepcion.html">Inicio</a></li>
+        <li><a href="propietarios-listado.html">Propietarios</a></li>
+        <li><a href="mascotas-listado.html">Mascotas</a></li>
+        <li><a href="citas-listado.html" aria-current="page">Citas</a></li>
+        <li class="elemento-salir"><a href="../index.html" class="enlace-salir">Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-citas">
+      <hgroup>
+        <p class="migas-pan">Inicio &rsaquo; Citas</p>
+        <h2 id="titulo-citas">Citas</h2>
+        <p>Cada visita, bien organizada.</p>
+      </hgroup>
+      <a href="citas-agendar.html" class="boton boton-blanco">+ Agendar cita</a>
+    </section>
+
+    <section class="barra-contador" aria-label="Resumen de citas">
+      <p><strong>05</strong> Citas programadas en Huellitas</p>
+      <span>Reprograma o cancela desde Gestionar.</span>
+    </section>
+
+    <article class="contenedor-tabla" aria-labelledby="titulo-tabla-citas">
+      <h3 id="titulo-tabla-citas">Agenda de citas</h3>
+
+      <form class="formulario-busqueda barra-busqueda-tabla" action="citas-listado.html" method="get">
+        <p class="campo-formulario">
+          <label for="buscar-cita" class="oculto-visualmente">Buscar cita</label>
+          <input type="search" id="buscar-cita" name="q" maxlength="50" placeholder="Buscar por mascota, propietario o fecha" title="Buscar cita">
+        </p>
+        <p class="campo-formulario campo-filtro">
+          <label for="filtro-estado" class="oculto-visualmente">Filtrar por estado</label>
+          <select id="filtro-estado" name="estado" title="Filtrar citas por estado">
+            <option value="" selected>Todos los estados</option>
+            <option value="programada">Programada</option>
+            <option value="atendida">Atendida</option>
+            <option value="cancelada">Cancelada</option>
+          </select>
+        </p>
+        <button type="submit" class="boton boton-secundario">Buscar</button>
+      </form>
+
+      <table class="tabla-datos">
+        <caption>Listado de citas registradas en VetCare</caption>
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Mascota</th>
+            <th scope="col">Propietario</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">Veterinario</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>18/11/2026</td>
+            <td>08:00</td>
+            <td>Rocky (Perro)</td>
+            <td>Pedro Andrés Vaca</td>
+            <td>Vacunación</td>
+            <td>Dra. Ana Gómez</td>
+            <td><span class="etiqueta-estado estado-atendida">Atendida</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+          <tr>
+            <td>18/11/2026</td>
+            <td>09:30</td>
+            <td>Luna (Gato)</td>
+            <td>Ana Lucía Torres</td>
+            <td>Desparasitación</td>
+            <td>Dra. Ana Gómez</td>
+            <td><span class="etiqueta-estado estado-atendida">Atendida</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+          <tr>
+            <td>18/11/2026</td>
+            <td>16:30</td>
+            <td>Toby (Perro)</td>
+            <td>Juan Carlos Pérez Morales</td>
+            <td>Consulta general</td>
+            <td>Dra. Ana Gómez</td>
+            <td><span class="etiqueta-estado estado-programada">Programada</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+          <tr>
+            <td>18/11/2026</td>
+            <td>17:30</td>
+            <td>Michi (Gato)</td>
+            <td>María Fernanda Salazar</td>
+            <td>Vacunación</td>
+            <td>Dra. Ana Gómez</td>
+            <td><span class="etiqueta-estado estado-programada">Programada</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+          <tr>
+            <td>19/11/2026</td>
+            <td>09:00</td>
+            <td>Luna (Gato)</td>
+            <td>Ana Lucía Torres</td>
+            <td>Consulta general</td>
+            <td>Dr. Luis Andrade</td>
+            <td><span class="etiqueta-estado estado-programada">Programada</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+          <tr>
+            <td>20/11/2026</td>
+            <td>10:30</td>
+            <td>Rocky (Perro)</td>
+            <td>Pedro Andrés Vaca</td>
+            <td>Cirugía menor</td>
+            <td>Dra. Sofía Paredes</td>
+            <td><span class="etiqueta-estado estado-programada">Programada</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+          <tr>
+            <td>17/11/2026</td>
+            <td>15:00</td>
+            <td>Michi (Gato)</td>
+            <td>María Fernanda Salazar</td>
+            <td>Consulta general</td>
+            <td>Dr. Luis Andrade</td>
+            <td><span class="etiqueta-estado estado-cancelada">Cancelada</span></td>
+            <td><span class="grupo-acciones"><a href="citas-gestionar.html" class="enlace-accion">&#9998; Gestionar</a></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="pie-tabla">
+        <span>Mostrando 7 registros</span>
+        <span class="paginacion">
+          <span>Anterior</span>
+          <strong>1</strong>
+          <span>Siguiente</span>
+        </span>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="pie-sitio">
+    <p>VetCare &middot; Clínica veterinaria Huellitas</p>
+    <p>Hecho con cariño, para cuidar mejor. &bull; Quito, Ecuador</p>
+  </footer>
+</body>
+
+</html>
